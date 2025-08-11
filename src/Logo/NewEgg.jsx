@@ -12,4 +12,4 @@ const NewEgg = ({fill={}, w="45", h="45"}) => {
     </svg>
 }
 
-export default Netgear
+export default NewEgg
