@@ -1,3 +1,5 @@
+import React from 'react'
+
 const MSI = ({fill={}, w="45", h="45"}) => {
     return <svg
         style={fill}
