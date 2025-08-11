@@ -1,9 +1,6 @@
-import React from 'react'
-
 const Aqara = ({fill={}, w="45", h="45"}) => {
     return <svg
         style={fill}
-        className="brand-logo-color"
         role="img"
         viewBox="0 0 96 28"
         xmlns="http://www.w3.org/2000/svg"

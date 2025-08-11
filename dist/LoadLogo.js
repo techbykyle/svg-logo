@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-var _react = _interopRequireDefault(require("react"));
 var _Apple = _interopRequireDefault(require("./Logo/Apple"));
 var _Google = _interopRequireDefault(require("./Logo/Google"));
 var _Amazon = _interopRequireDefault(require("./Logo/Amazon"));
@@ -53,7 +52,7 @@ var LoadLogo = function LoadLogo(_ref) {
   if (!Icon) {
     return null;
   }
-  return /*#__PURE__*/_react["default"].createElement(Icon, {
+  return /*#__PURE__*/React.createElement(Icon, {
     w: w,
     h: h,
     fill: fill

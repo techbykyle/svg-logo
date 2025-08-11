@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Apple from './Logo/Apple'
 import Google from './Logo/Google'
 import Amazon from './Logo/Amazon'
