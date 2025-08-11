@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Netgate = ({fill={}, w="45", h="45"}) => {
     return <svg
         style={fill}

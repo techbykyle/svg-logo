@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Google = ({fill={}, w="45", h="45"}) => {
     return <svg
         style={fill}
