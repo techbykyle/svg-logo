@@ -16,7 +16,7 @@ var Reolink = function Reolink(_ref) {
   return /*#__PURE__*/_react["default"].createElement("svg", {
     style: fill,
     role: "img",
-    viewBox: "0 0 512 128",
+    viewBox: "0 0 512 512",
     xmlns: "http://www.w3.org/2000/svg",
     width: w,
     height: h
