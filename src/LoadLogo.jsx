@@ -15,6 +15,7 @@ import Netgear from './Logo/Netgear'
 import Netgate from './Logo/Netgate'
 import MSI from './Logo/MSI'
 import GLiNet from './Logo/GLiNet'
+import Reolink from './Logo/Reolink'
 
 const svgMap = {
     Apple,
@@ -33,7 +34,8 @@ const svgMap = {
     Netgear,
     Netgate,
     MSI,
-    GLiNet
+    GLiNet,
+    Reolink
 }
 
 const LoadLogo = ({ iconPath, w, h, fill }) => {

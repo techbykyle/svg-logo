@@ -21,6 +21,7 @@ var _Netgear = _interopRequireDefault(require("./Logo/Netgear"));
 var _Netgate = _interopRequireDefault(require("./Logo/Netgate"));
 var _MSI = _interopRequireDefault(require("./Logo/MSI"));
 var _GLiNet = _interopRequireDefault(require("./Logo/GLiNet"));
+var _Reolink = _interopRequireDefault(require("./Logo/Reolink"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var svgMap = {
   Apple: _Apple["default"],
@@ -39,7 +40,8 @@ var svgMap = {
   Netgear: _Netgear["default"],
   Netgate: _Netgate["default"],
   MSI: _MSI["default"],
-  GLiNet: _GLiNet["default"]
+  GLiNet: _GLiNet["default"],
+  Reolink: _Reolink["default"]
 };
 var LoadLogo = function LoadLogo(_ref) {
   var iconPath = _ref.iconPath,
