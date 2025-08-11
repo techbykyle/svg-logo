@@ -1,0 +1,32 @@
+{
+  "name": "svg-logo",
+  "version": "1.0.0",
+  "description": "React package for loading SVG logos via LoadLogo component.",
+  "main": "src/LoadLogo.jsx",
+  "module": "src/LoadLogo.jsx",
+  "exports": {
+    ".": "./src/LoadLogo.jsx"
+  },
+  "files": [
+    "src/LoadLogo.jsx",
+    "src/Logo"
+  ],
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "keywords": [
+    "react",
+    "svg",
+    "logo",
+    "component"
+  ],
+  "author": "techbykyle",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techbykyle/svg-logo.git"
+  }
+}
