@@ -2,20 +2,26 @@
   "name": "svg-logo",
   "version": "1.0.0",
   "description": "React package for loading SVG logos via LoadLogo component.",
-  "main": "src/LoadLogo.jsx",
-  "module": "src/LoadLogo.jsx",
+  "main": "dist/LoadLogo.js",
+  "module": "dist/LoadLogo.js",
   "exports": {
-    ".": "./src/LoadLogo.jsx"
+    ".": "./dist/LoadLogo.js"
   },
   "files": [
-    "src/LoadLogo.jsx",
-    "src/Logo"
+    "dist/LoadLogo.js",
+    "dist/Logo"
   ],
   "scripts": {
+    "build": "node build.js",
     "test": "echo \"No tests specified\" && exit 0"
   },
   "peerDependencies": {
     "react": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3"
   },
   "keywords": [
     "react",
