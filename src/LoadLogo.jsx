@@ -18,6 +18,9 @@ import Netgate from './Logo/Netgate'
 import MSI from './Logo/MSI'
 import GLiNet from './Logo/GLiNet'
 import Reolink from './Logo/Reolink'
+import GitHub from './Logo/GitHub'
+import Gitea from './Logo/Gitea'
+import GitLab from './Logo/GitLab'
 
 const svgMap = {
     Apple,
@@ -37,7 +40,10 @@ const svgMap = {
     Netgate,
     MSI,
     GLiNet,
-    Reolink
+    Reolink,
+    GitHub,
+    Gitea,
+    GitLab
 }
 
 const LoadLogo = ({ iconPath, w, h, fill }) => {
