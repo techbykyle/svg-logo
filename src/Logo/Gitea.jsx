@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GLiNet = ({fill={}, w="45", h="45"}) => {
+const Gitea = ({fill={}, w="45", h="45"}) => {
     return <svg
         style={fill}
         role="img"
@@ -13,4 +13,4 @@ const GLiNet = ({fill={}, w="45", h="45"}) => {
         </svg>
 }
 
-export default GLiNet
+export default Gitea
