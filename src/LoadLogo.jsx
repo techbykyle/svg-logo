@@ -1,49 +1,51 @@
 import React from 'react'
 
-import Apple from './Logo/Apple'
-import Google from './Logo/Google'
 import Amazon from './Logo/Amazon'
+import Apple from './Logo/Apple'
+import Aqara from './Logo/Aqara'
+import Cisco from './Logo/Cisco'
+import Gitea from './Logo/Gitea'
+import GitHub from './Logo/GitHub'
+import GitLab from './Logo/GitLab'
+import GLiNet from './Logo/GLiNet'
+import Google from './Logo/Google'
 import HomeAssistant from './Logo/HomeAssistant'
 import HomeDepot from './Logo/HomeDepot'
 import Microsoft from './Logo/Microsoft'
+import Mqtt from './Logo/Mqtt'
+import MSI from './Logo/MSI'
+import Netgate from './Logo/Netgate'
+import Netgear from './Logo/Netgear'
 import NewEgg from './Logo/NewEgg'
+import Reolink from './Logo/Reolink'
 import Samsung from './Logo/Samsung'
 import Shelly from './Logo/Shelly'
-import Aqara from './Logo/Aqara'
-import Xiaomi from './Logo/Xiaomi'
 import Ubiquiti from './Logo/Ubiquiti'
-import Cisco from './Logo/Cisco'
-import Netgear from './Logo/Netgear'
-import Netgate from './Logo/Netgate'
-import MSI from './Logo/MSI'
-import GLiNet from './Logo/GLiNet'
-import Reolink from './Logo/Reolink'
-import GitHub from './Logo/GitHub'
-import Gitea from './Logo/Gitea'
-import GitLab from './Logo/GitLab'
+import Xiaomi from './Logo/Xiaomi'
 
 const svgMap = {
-    Apple,
-    Google,
     Amazon,
+    Apple,
+    Aqara,
+    Cisco,
+    Gitea,
+    GitHub,
+    GitLab,
+    GLiNet,
+    Google,
     HomeAssistant,
     HomeDepot,
     Microsoft,
+    Mqtt,
+    MSI,
+    Netgate,
+    Netgear,
     NewEgg,
+    Reolink,
     Samsung,
     Shelly,
-    Aqara,
-    Xiaomi,
     Ubiquiti,
-    Cisco,
-    Netgear,
-    Netgate,
-    MSI,
-    GLiNet,
-    Reolink,
-    GitHub,
-    Gitea,
-    GitLab
+    Xiaomi
 }
 
 const LoadLogo = ({ iconPath, w, h, fill }) => {
