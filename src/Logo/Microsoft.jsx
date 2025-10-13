@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Microsoft = ({fill={}, w="45", h="45"}) => {
+const Microsoft = ({fill={}, w="45", h="45", title="Microsoft"}) => {
     return <svg
         style={fill}
         role="img"
@@ -8,7 +8,7 @@ const Microsoft = ({fill={}, w="45", h="45"}) => {
         xmlns="http://www.w3.org/2000/svg"
         width={w}
         height={h}>
-            <title>Microsoft</title>
+            <title>{title}</title>
             <path d="M31.87,30.58H244.7V243.39H31.87Z"/>
             <path d="M266.89,30.58H479.7V243.39H266.89Z"/>
             <path d="M31.87,265.61H244.7v212.8H31.87Z"/>

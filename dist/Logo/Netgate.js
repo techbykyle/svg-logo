@@ -12,7 +12,9 @@ var Netgate = function Netgate(_ref) {
     _ref$w = _ref.w,
     w = _ref$w === void 0 ? "45" : _ref$w,
     _ref$h = _ref.h,
-    h = _ref$h === void 0 ? "45" : _ref$h;
+    h = _ref$h === void 0 ? "45" : _ref$h,
+    _ref$title = _ref.title,
+    title = _ref$title === void 0 ? "Netgate" : _ref$title;
   return /*#__PURE__*/_react["default"].createElement("svg", {
     style: fill,
     role: "img",
@@ -20,7 +22,7 @@ var Netgate = function Netgate(_ref) {
     xmlns: "http://www.w3.org/2000/svg",
     width: w,
     height: h
-  }, /*#__PURE__*/_react["default"].createElement("title", null, "Netgate"), /*#__PURE__*/_react["default"].createElement("path", {
+  }, /*#__PURE__*/_react["default"].createElement("title", null, title), /*#__PURE__*/_react["default"].createElement("path", {
     fill: "#fff",
     d: "M0 0h192.756v192.756H0V0z"
   }), /*#__PURE__*/_react["default"].createElement("path", {

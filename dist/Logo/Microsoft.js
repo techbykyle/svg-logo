@@ -12,7 +12,9 @@ var Microsoft = function Microsoft(_ref) {
     _ref$w = _ref.w,
     w = _ref$w === void 0 ? "45" : _ref$w,
     _ref$h = _ref.h,
-    h = _ref$h === void 0 ? "45" : _ref$h;
+    h = _ref$h === void 0 ? "45" : _ref$h,
+    _ref$title = _ref.title,
+    title = _ref$title === void 0 ? "Microsoft" : _ref$title;
   return /*#__PURE__*/_react["default"].createElement("svg", {
     style: fill,
     role: "img",
@@ -20,7 +22,7 @@ var Microsoft = function Microsoft(_ref) {
     xmlns: "http://www.w3.org/2000/svg",
     width: w,
     height: h
-  }, /*#__PURE__*/_react["default"].createElement("title", null, "Microsoft"), /*#__PURE__*/_react["default"].createElement("path", {
+  }, /*#__PURE__*/_react["default"].createElement("title", null, title), /*#__PURE__*/_react["default"].createElement("path", {
     d: "M31.87,30.58H244.7V243.39H31.87Z"
   }), /*#__PURE__*/_react["default"].createElement("path", {
     d: "M266.89,30.58H479.7V243.39H266.89Z"

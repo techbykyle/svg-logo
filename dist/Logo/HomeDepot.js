@@ -12,14 +12,16 @@ var HomeDepot = function HomeDepot(_ref) {
     _ref$w = _ref.w,
     w = _ref$w === void 0 ? "45" : _ref$w,
     _ref$h = _ref.h,
-    h = _ref$h === void 0 ? "45" : _ref$h;
+    h = _ref$h === void 0 ? "45" : _ref$h,
+    _ref$title = _ref.title,
+    title = _ref$title === void 0 ? "Home Depot" : _ref$title;
   return /*#__PURE__*/_react["default"].createElement("svg", {
     style: fill,
     xmlns: "http://www.w3.org/2000/svg",
     width: w,
     height: h,
     viewBox: "0 0 192.756 192.756"
-  }, /*#__PURE__*/_react["default"].createElement("g", {
+  }, /*#__PURE__*/_react["default"].createElement("title", null, title), /*#__PURE__*/_react["default"].createElement("g", {
     fillRule: "evenodd",
     clipRule: "evenodd"
   }, /*#__PURE__*/_react["default"].createElement("path", {

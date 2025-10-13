@@ -12,7 +12,9 @@ var GitLab = function GitLab(_ref) {
     _ref$w = _ref.w,
     w = _ref$w === void 0 ? "45" : _ref$w,
     _ref$h = _ref.h,
-    h = _ref$h === void 0 ? "45" : _ref$h;
+    h = _ref$h === void 0 ? "45" : _ref$h,
+    _ref$title = _ref.title,
+    title = _ref$title === void 0 ? "GitLab" : _ref$title;
   return /*#__PURE__*/_react["default"].createElement("svg", {
     style: fill,
     role: "img",
@@ -20,7 +22,7 @@ var GitLab = function GitLab(_ref) {
     xmlns: "http://www.w3.org/2000/svg",
     width: w,
     height: h
-  }, /*#__PURE__*/_react["default"].createElement("title", null, "GitLab"), /*#__PURE__*/_react["default"].createElement("polygon", {
+  }, /*#__PURE__*/_react["default"].createElement("title", null, title), /*#__PURE__*/_react["default"].createElement("polygon", {
     points: "16 28.896 16 28.896 21.156 13.029 10.844 13.029 16 28.896"
   }), /*#__PURE__*/_react["default"].createElement("polygon", {
     points: "16 28.896 10.844 13.029 3.619 13.029 16 28.896"
