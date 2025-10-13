@@ -56,7 +56,8 @@ var LoadLogo = function LoadLogo(_ref) {
   var iconPath = _ref.iconPath,
     w = _ref.w,
     h = _ref.h,
-    fill = _ref.fill;
+    fill = _ref.fill,
+    title = _ref.title;
   var Icon = svgMap[iconPath];
   if (!Icon) {
     return null;
@@ -64,7 +65,8 @@ var LoadLogo = function LoadLogo(_ref) {
   return /*#__PURE__*/_react["default"].createElement(Icon, {
     w: w,
     h: h,
-    fill: fill
+    fill: fill,
+    title: title
   });
 };
 var _default = exports["default"] = LoadLogo;

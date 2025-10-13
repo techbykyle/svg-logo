@@ -14,7 +14,7 @@ var Mqtt = function Mqtt(_ref) {
     _ref$h = _ref.h,
     h = _ref$h === void 0 ? "45" : _ref$h,
     _ref$title = _ref.title,
-    title = _ref$title === void 0 ? "MSI" : _ref$title;
+    title = _ref$title === void 0 ? "Mqtt" : _ref$title;
   return /*#__PURE__*/_react["default"].createElement("svg", {
     style: fill,
     role: "img",

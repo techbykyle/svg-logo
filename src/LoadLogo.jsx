@@ -48,7 +48,7 @@ const svgMap = {
     Xiaomi
 }
 
-const LoadLogo = ({ iconPath, w, h, fill }) => {
+const LoadLogo = ({ iconPath, w, h, fill, title }) => {
 
     const Icon = svgMap[iconPath]
 
@@ -56,7 +56,7 @@ const LoadLogo = ({ iconPath, w, h, fill }) => {
         return null
     }
 
-    return <Icon w={w} h={h} fill={fill} />
+    return <Icon w={w} h={h} fill={fill} title={title} />
 }
 
 export default LoadLogo
