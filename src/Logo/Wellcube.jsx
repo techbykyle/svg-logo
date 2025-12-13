@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Amazon = ({fill={}, w="45", h="45", title="WellCube"}) => {
+const Wellcube = ({fill={}, w="45", h="45", title="Wellcube"}) => {
     return <svg
         style={fill}
         role="img"
@@ -13,4 +13,4 @@ const Amazon = ({fill={}, w="45", h="45", title="WellCube"}) => {
         </svg>
 }
 
-export default Amazon
+export default Wellcube
