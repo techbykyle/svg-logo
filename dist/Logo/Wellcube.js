@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
-var Amazon = function Amazon(_ref) {
+var Wellcube = function Wellcube(_ref) {
   var _ref$fill = _ref.fill,
     fill = _ref$fill === void 0 ? {} : _ref$fill,
     _ref$w = _ref.w,
@@ -14,7 +14,7 @@ var Amazon = function Amazon(_ref) {
     _ref$h = _ref.h,
     h = _ref$h === void 0 ? "45" : _ref$h,
     _ref$title = _ref.title,
-    title = _ref$title === void 0 ? "WellCube" : _ref$title;
+    title = _ref$title === void 0 ? "Wellcube" : _ref$title;
   return /*#__PURE__*/_react["default"].createElement("svg", {
     style: fill,
     role: "img",
@@ -46,4 +46,4 @@ var Amazon = function Amazon(_ref) {
     d: "M17.756 47.9099H10.9579C4.94988 47.9099 0.0797119 43.0397 0.0797119 37.0318V10.9579C0.0797119 4.94991 4.94988 0.0797424 10.9579 0.0797424H37.0317C43.0397 0.0797424 47.9099 4.94991 47.9099 10.9579V13.8148C47.9099 13.924 47.8214 14.0117 47.7129 14.0117H45.7411C45.6319 14.0117 45.5442 13.9232 45.5442 13.8148V10.9579C45.5442 6.25675 41.7329 2.44625 37.0325 2.44625H10.9579C6.25672 2.44625 2.44622 6.25755 2.44622 10.9579V37.0318C2.44622 41.7329 6.25752 45.5442 10.9586 45.5442H17.7568C17.866 45.5442 17.9537 45.6327 17.9537 45.7411V47.713C17.9529 47.8214 17.8644 47.9099 17.756 47.9099Z"
   }));
 };
-var _default = exports["default"] = Amazon;
+var _default = exports["default"] = Wellcube;
