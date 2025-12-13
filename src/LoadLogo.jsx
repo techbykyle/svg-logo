@@ -21,6 +21,7 @@ import Reolink from './Logo/Reolink'
 import Samsung from './Logo/Samsung'
 import Shelly from './Logo/Shelly'
 import Ubiquiti from './Logo/Ubiquiti'
+import WellCube from './Logo/WellCube'
 import Xiaomi from './Logo/Xiaomi'
 
 const svgMap = {
@@ -45,6 +46,7 @@ const svgMap = {
     Samsung,
     Shelly,
     Ubiquiti,
+    WellCube,
     Xiaomi
 }
 

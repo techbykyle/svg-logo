@@ -26,6 +26,7 @@ var _Reolink = _interopRequireDefault(require("./Logo/Reolink"));
 var _Samsung = _interopRequireDefault(require("./Logo/Samsung"));
 var _Shelly = _interopRequireDefault(require("./Logo/Shelly"));
 var _Ubiquiti = _interopRequireDefault(require("./Logo/Ubiquiti"));
+var _WellCube = _interopRequireDefault(require("./Logo/WellCube"));
 var _Xiaomi = _interopRequireDefault(require("./Logo/Xiaomi"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var svgMap = {
@@ -50,6 +51,7 @@ var svgMap = {
   Samsung: _Samsung["default"],
   Shelly: _Shelly["default"],
   Ubiquiti: _Ubiquiti["default"],
+  WellCube: _WellCube["default"],
   Xiaomi: _Xiaomi["default"]
 };
 var LoadLogo = function LoadLogo(_ref) {
