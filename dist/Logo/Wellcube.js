@@ -15,7 +15,7 @@ var Wellcube = function Wellcube(_ref) {
     h = _ref$h === void 0 ? 45 : _ref$h,
     _ref$title = _ref.title,
     title = _ref$title === void 0 ? "Wellcube" : _ref$title;
-  w = w + 10;
+  w = w + 25;
   return /*#__PURE__*/_react["default"].createElement("svg", {
     style: fill,
     viewBox: "0 0 70 70",
