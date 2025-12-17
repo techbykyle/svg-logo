@@ -17,8 +17,7 @@ var Wellcube = function Wellcube(_ref) {
     title = _ref$title === void 0 ? "Wellcube" : _ref$title;
   return /*#__PURE__*/_react["default"].createElement("svg", {
     style: fill,
-    role: "img",
-    viewBox: "0 0 24 24",
+    viewBox: "0 0 70 70",
     xmlns: "http://www.w3.org/2000/svg",
     width: w,
     height: h,
