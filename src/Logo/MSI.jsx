@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MSI = ({fill={}, w="45", h="45", title="MSI"}) => {
+const MSI = ({fill={}, w=45, h=45, title="MSI"}) => {
     return <svg
         style={fill}
         role="img"

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Ubiquiti = ({fill={}, w="45", h="45", title="Ubiquiti"}) => {
+const Ubiquiti = ({fill={}, w=45, h=45, title="Ubiquiti"}) => {
     return <svg
         style={fill}
         role="img"

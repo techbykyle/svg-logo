@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Apple = ({fill={}, w="45", h="45", title="Apple"}) => {
+const Apple = ({fill={}, w=45, h=45, title="Apple"}) => {
     return <svg
         style={fill}
         role="img"

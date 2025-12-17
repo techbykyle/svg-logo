@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Netgear = ({fill={}, w="45", h="45", title="Netgear"}) => {
+const Netgear = ({fill={}, w=45, h=45, title="Netgear"}) => {
     return <svg
         style={fill}
         role="img"

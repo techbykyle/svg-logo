@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Xiaomi = ({fill={}, w="45", h="45", title="Xiaomi"}) => {
+const Xiaomi = ({fill={}, w=45, h=45, title="Xiaomi"}) => {
     return <svg
         style={fill}
         role="img"

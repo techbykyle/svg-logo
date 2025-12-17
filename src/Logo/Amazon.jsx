@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Amazon = ({fill={}, w="45", h="45", title="Amazon"}) => {
+const Amazon = ({fill={}, w=45, h=45, title="Amazon"}) => {
     return <svg
         style={fill}
         role="img"

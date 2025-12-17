@@ -1,6 +1,9 @@
 import React from 'react'
 
-const Wellcube = ({fill={}, w="45", h="45", title="Wellcube"}) => {
+const Wellcube = ({fill={}, w=45, h=45, title="Wellcube"}) => {
+
+    w = w + 10
+
     return <svg
         style={fill}
         viewBox="0 0 70 70"

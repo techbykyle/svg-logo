@@ -1,6 +1,6 @@
 import React from 'react'
 
-const HomeAssistant = ({fill={}, w="45", h="45", title="Home Assistant"}) => {
+const HomeAssistant = ({fill={}, w=45, h=45, title="Home Assistant"}) => {
     return <svg
         style={fill}
         role="img"

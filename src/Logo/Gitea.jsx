@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Gitea = ({fill={}, w="45", h="45", title="Gitea"}) => {
+const Gitea = ({fill={}, w=45, h=45, title="Gitea"}) => {
     return <svg
         style={fill}
         role="img"

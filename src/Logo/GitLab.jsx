@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GitLab = ({fill={}, w="45", h="45", title="GitLab"}) => {
+const GitLab = ({fill={}, w=45, h=45, title="GitLab"}) => {
     return <svg
         style={fill}
         role="img"

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const HomeDepot = ({fill={}, w="45", h="45", title="Home Depot"}) => {
+const HomeDepot = ({fill={}, w=45, h=45, title="Home Depot"}) => {
     return <svg 
         style={fill}
         xmlns="http://www.w3.org/2000/svg" 

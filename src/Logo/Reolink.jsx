@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Reolink = ({fill={}, w="45", h="45", title="Reolink"}) => {
+const Reolink = ({fill={}, w=45, h=45, title="Reolink"}) => {
     return <svg
         style={fill}
         role="img"

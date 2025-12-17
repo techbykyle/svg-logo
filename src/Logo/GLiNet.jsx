@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GLiNet = ({fill={}, w="45", h="45", title="GLiNet"}) => {
+const GLiNet = ({fill={}, w=45, h=45, title="GLiNet"}) => {
     return <svg
         style={fill}
         role="img"

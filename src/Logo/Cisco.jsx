@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cisco = ({fill={}, w="45", h="45", title="Cisco"}) => {
+const Cisco = ({fill={}, w=45, h=45, title="Cisco"}) => {
     return <svg
         style={fill}
         role="img"

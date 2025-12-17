@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Microsoft = ({fill={}, w="45", h="45", title="Microsoft"}) => {
+const Microsoft = ({fill={}, w=45, h=45, title="Microsoft"}) => {
     return <svg
         style={fill}
         role="img"

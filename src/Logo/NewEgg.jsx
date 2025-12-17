@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NewEgg = ({fill={}, w="45", h="45", title="NewEgg"}) => {
+const NewEgg = ({fill={}, w=45, h=45, title="NewEgg"}) => {
     return <svg
         style={fill}
         role="img"

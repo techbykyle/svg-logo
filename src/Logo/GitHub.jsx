@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GitHub = ({fill={}, w="45", h="45", title="GitHub"}) => {
+const GitHub = ({fill={}, w=45, h=45, title="GitHub"}) => {
     return <svg
         style={fill}
         role="img"

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Mqtt = ({fill={}, w="45", h="45", title="Mqtt"}) => {
+const Mqtt = ({fill={}, w=45, h=45, title="Mqtt"}) => {
     return <svg
         style={fill}
         role="img"

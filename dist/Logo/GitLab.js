@@ -10,9 +10,9 @@ var GitLab = function GitLab(_ref) {
   var _ref$fill = _ref.fill,
     fill = _ref$fill === void 0 ? {} : _ref$fill,
     _ref$w = _ref.w,
-    w = _ref$w === void 0 ? "45" : _ref$w,
+    w = _ref$w === void 0 ? 45 : _ref$w,
     _ref$h = _ref.h,
-    h = _ref$h === void 0 ? "45" : _ref$h,
+    h = _ref$h === void 0 ? 45 : _ref$h,
     _ref$title = _ref.title,
     title = _ref$title === void 0 ? "GitLab" : _ref$title;
   return /*#__PURE__*/_react["default"].createElement("svg", {
