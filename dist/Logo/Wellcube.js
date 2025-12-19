@@ -15,14 +15,13 @@ var Wellcube = function Wellcube(_ref) {
     h = _ref$h === void 0 ? 45 : _ref$h,
     _ref$title = _ref.title,
     title = _ref$title === void 0 ? "Wellcube" : _ref$title;
-  var width = w + 25;
-  var height = h + 25;
   return /*#__PURE__*/_react["default"].createElement("svg", {
     style: fill,
+    role: "img",
     viewBox: "0 0 70 70",
     xmlns: "http://www.w3.org/2000/svg",
-    width: width,
-    height: height,
+    width: w,
+    height: h,
     preserveAspectRatio: "xMidYMid meet"
   }, /*#__PURE__*/_react["default"].createElement("title", null, title), /*#__PURE__*/_react["default"].createElement("g", {
     transform: "translate(0 11)"
