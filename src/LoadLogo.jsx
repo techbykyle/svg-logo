@@ -17,6 +17,7 @@ import MSI from './Logo/MSI'
 import Netgate from './Logo/Netgate'
 import Netgear from './Logo/Netgear'
 import NewEgg from './Logo/NewEgg'
+import OpenAi from './Logo/OpenAi'
 import Opensource from './Logo/Opensource'
 import Reolink from './Logo/Reolink'
 import Samsung from './Logo/Samsung'
@@ -43,6 +44,7 @@ const svgMap = {
     Netgate,
     Netgear,
     NewEgg,
+    OpenAi,
     Opensource,
     Reolink,
     Samsung,

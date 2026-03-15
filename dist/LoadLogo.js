@@ -22,6 +22,7 @@ var _MSI = _interopRequireDefault(require("./Logo/MSI"));
 var _Netgate = _interopRequireDefault(require("./Logo/Netgate"));
 var _Netgear = _interopRequireDefault(require("./Logo/Netgear"));
 var _NewEgg = _interopRequireDefault(require("./Logo/NewEgg"));
+var _OpenAi = _interopRequireDefault(require("./Logo/OpenAi"));
 var _Opensource = _interopRequireDefault(require("./Logo/Opensource"));
 var _Reolink = _interopRequireDefault(require("./Logo/Reolink"));
 var _Samsung = _interopRequireDefault(require("./Logo/Samsung"));
@@ -48,6 +49,7 @@ var svgMap = {
   Netgate: _Netgate["default"],
   Netgear: _Netgear["default"],
   NewEgg: _NewEgg["default"],
+  OpenAi: _OpenAi["default"],
   Opensource: _Opensource["default"],
   Reolink: _Reolink["default"],
   Samsung: _Samsung["default"],
