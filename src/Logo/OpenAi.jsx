@@ -1,10 +1,10 @@
 import React from 'react'
 
-const OpenAi = ({fill={}, w=45, h=45, title="Opensource"}) => {
+const OpenAi = ({fill={}, w=45, h=45, title="OpenAi"}) => {
     return <svg
         style={fill}
         role="img"
-        viewBox="0 0 512 512"
+        viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         width={w}
         height={h}>
