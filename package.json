@@ -1,25 +1,40 @@
 {
   "name": "@techbykyle/svg-logo",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A lightweight, tree-shakeable React SVG brand-logo library.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/cjs/index.js"
+      }
     },
     "./icons/*": {
-      "types": "./dist/types/icons/*.d.ts",
-      "import": "./dist/esm/icons/*.js",
-      "require": "./dist/cjs/icons/*.js"
+      "import": {
+        "types": "./dist/types/icons/*.d.mts",
+        "default": "./dist/esm/icons/*.js"
+      },
+      "require": {
+        "types": "./dist/types/icons/*.d.cts",
+        "default": "./dist/cjs/icons/*.js"
+      }
     },
     "./metadata": {
-      "types": "./dist/metadata.d.ts",
-      "import": "./dist/esm/metadata.js",
-      "require": "./dist/cjs/metadata.js"
+      "import": {
+        "types": "./dist/metadata.d.mts",
+        "default": "./dist/esm/metadata.js"
+      },
+      "require": {
+        "types": "./dist/metadata.d.cts",
+        "default": "./dist/cjs/metadata.js"
+      }
     },
     "./metadata.json": "./dist/metadata.json",
     "./package.json": "./package.json"
@@ -34,7 +49,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "node build.js",
+    "build": "node build.js && node scripts/build-types.js",
     "check": "node scripts/check-package.js",
     "test": "node scripts/test-consumers.js",
     "test:consumers": "node scripts/test-consumers.js",

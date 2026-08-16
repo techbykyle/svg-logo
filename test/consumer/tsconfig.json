@@ -10,6 +10,7 @@
     "skipLibCheck": false
   },
   "include": [
-    "types.js"
+    "types.js",
+    "types.cts"
   ]
 }

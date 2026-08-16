@@ -19,13 +19,71 @@ function assertFile(relativePath) {
     assert(fs.existsSync(path.join(rootDir, relativePath)), `Missing package file: ${relativePath}`)
 }
 
-assert(packageJson.version === '0.2.0', 'package.json must be version 0.2.0')
+function assertConditionalExport(exportName, expected) {
+    const definition = packageJson.exports[exportName]
+    assert(definition, `Missing package export: ${exportName}`)
+
+    for (const condition of ['import', 'require']) {
+        assert(definition[condition], `Missing ${condition} condition for ${exportName}`)
+        assert(
+            Object.keys(definition[condition])[0] === 'types',
+            `The types condition must come first for ${exportName} ${condition}`
+        )
+        assert(
+            definition[condition].types === expected[condition].types,
+            `Incorrect ${condition} types target for ${exportName}`
+        )
+        assert(
+            definition[condition].default === expected[condition].default,
+            `Incorrect ${condition} runtime target for ${exportName}`
+        )
+    }
+}
+
+assert(packageJson.version === '0.2.1', 'package.json must be version 0.2.1')
 assert(packageJson.private !== true, 'The package is marked private and cannot be published')
 assert(packageJson.sideEffects === false, 'sideEffects must remain false for tree-shaking')
 assert(packageJson.peerDependencies.react === '>=17.0.0', 'React peer dependency must remain >=17.0.0')
+assert(
+    packageJson.scripts.build === 'node build.js && node scripts/build-types.js',
+    'The build must generate runtime output followed by dual-module declarations'
+)
+assertFile('scripts/build-types.js')
 assert(!fs.existsSync(path.join(rootDir, '.babelrc')), 'The obsolete .babelrc file must not exist')
 assert(!fs.existsSync(path.join(rootDir, 'src', 'index.js')), 'src/index.js must be generated, not hand-maintained')
 assert(!fs.existsSync(path.join(rootDir, 'src', 'LoadLogo.jsx')), 'src/LoadLogo.jsx must be generated, not hand-maintained')
+
+assertConditionalExport('.', {
+    import: {
+        types: './dist/index.d.mts',
+        default: './dist/esm/index.js'
+    },
+    require: {
+        types: './dist/index.d.cts',
+        default: './dist/cjs/index.js'
+    }
+})
+assertConditionalExport('./icons/*', {
+    import: {
+        types: './dist/types/icons/*.d.mts',
+        default: './dist/esm/icons/*.js'
+    },
+    require: {
+        types: './dist/types/icons/*.d.cts',
+        default: './dist/cjs/icons/*.js'
+    }
+})
+assertConditionalExport('./metadata', {
+    import: {
+        types: './dist/metadata.d.mts',
+        default: './dist/esm/metadata.js'
+    },
+    require: {
+        types: './dist/metadata.d.cts',
+        default: './dist/cjs/metadata.js'
+    }
+})
+assert(packageJson.exports['./metadata.json'] === './dist/metadata.json', 'The metadata JSON export is missing')
 
 for (const requiredFile of [
     packageJson.main,
@@ -35,7 +93,11 @@ for (const requiredFile of [
     'README.md',
     'icons.json',
     'icons.schema.json',
+    'dist/index.d.mts',
+    'dist/index.d.cts',
     'dist/metadata.d.ts',
+    'dist/metadata.d.mts',
+    'dist/metadata.d.cts',
     'dist/metadata.json',
     'dist/cjs/LoadLogo.js',
     'dist/cjs/metadata.js',
@@ -53,15 +115,13 @@ for (const icon of icons) {
         `dist/cjs/icons/${icon.exportName}.js`,
         `dist/esm/Logo/${icon.fileName}.js`,
         `dist/esm/icons/${icon.exportName}.js`,
-        `dist/types/icons/${icon.exportName}.d.ts`
+        `dist/types/icons/${icon.exportName}.d.ts`,
+        `dist/types/icons/${icon.exportName}.d.mts`,
+        `dist/types/icons/${icon.exportName}.d.cts`
     ]) {
         assertFile(requiredFile)
     }
 }
-
-assert(packageJson.exports['./icons/*'].types === './dist/types/icons/*.d.ts', 'Per-icon type exports are incorrect')
-assert(packageJson.exports['./metadata'], 'The metadata JavaScript export is missing')
-assert(packageJson.exports['./metadata.json'] === './dist/metadata.json', 'The metadata JSON export is missing')
 
 const expectedMetadata = {
     schemaVersion: manifest.schemaVersion,
@@ -70,12 +130,30 @@ const expectedMetadata = {
 const generatedMetadata = JSON.parse(fs.readFileSync(path.join(rootDir, 'dist', 'metadata.json'), 'utf8'))
 assert(JSON.stringify(generatedMetadata) === JSON.stringify(expectedMetadata), 'Generated metadata differs from icons.json')
 
-const declarationText = fs.readFileSync(path.join(rootDir, 'dist', 'index.d.ts'), 'utf8')
+const fallbackDeclarationText = fs.readFileSync(path.join(rootDir, 'dist', 'index.d.ts'), 'utf8')
+const esmDeclarationText = fs.readFileSync(path.join(rootDir, 'dist', 'index.d.mts'), 'utf8')
+const cjsDeclarationText = fs.readFileSync(path.join(rootDir, 'dist', 'index.d.cts'), 'utf8')
 const esmIndexText = fs.readFileSync(path.join(rootDir, 'dist', 'esm', 'index.js'), 'utf8')
 const cjsIndexText = fs.readFileSync(path.join(rootDir, 'dist', 'cjs', 'index.js'), 'utf8')
 const readme = fs.readFileSync(path.join(rootDir, 'README.md'), 'utf8')
+
+assert(esmDeclarationText.includes('export default LoadLogo'), 'ESM declaration is missing its default export')
+assert(cjsDeclarationText.includes('export = LoadLogo'), 'CommonJS declaration is missing export = LoadLogo')
+assert(cjsDeclarationText.includes('declare namespace LoadLogo'), 'CommonJS declaration is missing its type namespace')
+assert(
+    fallbackDeclarationText === esmDeclarationText,
+    'The legacy declaration fallback must match the ESM declaration surface'
+)
+
 for (const icon of icons) {
-    assert(declarationText.includes(`const ${icon.exportName}: LogoComponent`), `Missing declaration for ${icon.exportName}`)
+    assert(
+        esmDeclarationText.includes(`const ${icon.exportName}: LogoComponent`),
+        `Missing ESM declaration for ${icon.exportName}`
+    )
+    assert(
+        cjsDeclarationText.includes(`readonly ${icon.exportName}: LogoComponent`),
+        `Missing CommonJS declaration for ${icon.exportName}`
+    )
     assert(esmIndexText.includes(icon.exportName), `Missing ESM export for ${icon.exportName}`)
     assert(cjsIndexText.includes(icon.exportName), `Missing CommonJS export for ${icon.exportName}`)
     assert(readme.includes(`\`${icon.exportName}\``), `README catalog is missing ${icon.exportName}`)
@@ -112,11 +190,22 @@ for (const requiredPackedFile of [
     'README.md',
     'icons.json',
     'icons.schema.json',
+    'dist/index.d.mts',
+    'dist/index.d.cts',
+    'dist/metadata.d.mts',
+    'dist/metadata.d.cts',
     'dist/metadata.json',
+    'dist/types/icons/Grok.d.mts',
+    'dist/types/icons/Grok.d.cts',
     'dist/esm/index.js',
     'dist/cjs/index.js'
 ]) {
-    assert(packed.files.some((entry) => entry.path === requiredPackedFile), `${requiredPackedFile} is not included in the package`)
+    assert(
+        packed.files.some((entry) => entry.path === requiredPackedFile),
+        `${requiredPackedFile} is not included in the package`
+    )
 }
 
-console.log(`Verified ${icons.length} icon exports, metadata records, entry points, declarations, and package contents.`)
+console.log(
+    `Verified ${icons.length} icon exports, metadata records, dual-module declarations, entry points, and package contents.`
+)
