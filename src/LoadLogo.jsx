@@ -1,31 +1,31 @@
 import React from 'react'
 
-import Amazon from './Logo/Amazon'
-import Apple from './Logo/Apple'
-import Aqara from './Logo/Aqara'
-import Cisco from './Logo/Cisco'
-import Gitea from './Logo/Gitea'
-import GitHub from './Logo/GitHub'
-import GitLab from './Logo/GitLab'
-import GLiNet from './Logo/GLiNet'
-import Google from './Logo/Google'
-import HomeAssistant from './Logo/HomeAssistant'
-import HomeDepot from './Logo/HomeDepot'
-import Microsoft from './Logo/Microsoft'
-import Mqtt from './Logo/Mqtt'
-import MSI from './Logo/MSI'
-import Netgate from './Logo/Netgate'
-import Netgear from './Logo/Netgear'
-import NewEgg from './Logo/NewEgg'
-import OpenAi from './Logo/OpenAi'
-import Opensource from './Logo/Opensource'
-import Reolink from './Logo/Reolink'
-import Samsung from './Logo/Samsung'
-import Shelly from './Logo/Shelly'
-import Ubiquiti from './Logo/Ubiquiti'
-import VsCode from './Logo/VsCode'
-import Wellcube from './Logo/Wellcube'
-import Xiaomi from './Logo/Xiaomi'
+import Amazon from './Logo/Amazon.js'
+import Apple from './Logo/Apple.js'
+import Aqara from './Logo/Aqara.js'
+import Cisco from './Logo/Cisco.js'
+import Gitea from './Logo/Gitea.js'
+import GitHub from './Logo/GitHub.js'
+import GitLab from './Logo/GitLab.js'
+import GLiNet from './Logo/GLiNet.js'
+import Google from './Logo/Google.js'
+import HomeAssistant from './Logo/HomeAssistant.js'
+import HomeDepot from './Logo/HomeDepot.js'
+import Microsoft from './Logo/Microsoft.js'
+import Mqtt from './Logo/Mqtt.js'
+import MSI from './Logo/MSI.js'
+import Netgate from './Logo/Netgate.js'
+import Netgear from './Logo/Netgear.js'
+import NewEgg from './Logo/NewEgg.js'
+import OpenAi from './Logo/OpenAi.js'
+import Opensource from './Logo/Opensource.js'
+import Reolink from './Logo/Reolink.js'
+import Samsung from './Logo/Samsung.js'
+import Shelly from './Logo/Shelly.js'
+import Ubiquiti from './Logo/Ubiquiti.js'
+import VsCode from './Logo/VsCode.js'
+import Wellcube from './Logo/Wellcube.js'
+import Xiaomi from './Logo/Xiaomi.js'
 
 const svgMap = {
     Amazon,
@@ -55,6 +55,8 @@ const svgMap = {
     Wellcube,
     Xiaomi
 }
+
+export const logoNames = Object.freeze(Object.keys(svgMap))
 
 const LoadLogo = ({ iconPath, w, h, fill, title }) => {
 

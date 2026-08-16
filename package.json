@@ -1,18 +1,33 @@
 {
-  "name": "svg-logo",
+  "name": "@techbykyle/svg-logo",
   "version": "1.0.0",
-  "description": "React package for loading SVG logos via LoadLogo component.",
-  "main": "dist/LoadLogo.js",
-  "module": "dist/LoadLogo.js",
+  "description": "A lightweight React SVG logo icon pack.",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/LoadLogo.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./icons/*": {
+      "types": "./dist/types/Logo/*.d.ts",
+      "import": "./dist/esm/Logo/*.js",
+      "require": "./dist/cjs/Logo/*.js"
+    },
+    "./package.json": "./package.json"
   },
   "files": [
-    "dist/LoadLogo.js",
-    "dist/Logo"
+    "dist",
+    "LICENSE",
+    "README.md"
   ],
+  "sideEffects": false,
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "check": "node scripts/check-package.js",
+    "prepack": "node build.js && node scripts/check-package.js"
   },
   "peerDependencies": {
     "react": ">=17.0.0"
@@ -27,12 +42,21 @@
     "react",
     "svg",
     "logo",
+    "icons",
+    "icon-pack",
     "component"
   ],
   "author": "techbykyle",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/techbykyle/svg-logo.git"
+  },
+  "homepage": "https://github.com/techbykyle/svg-logo#readme",
+  "bugs": {
+    "url": "https://github.com/techbykyle/svg-logo/issues"
   }
 }

@@ -1,0 +1,33 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _react = _interopRequireDefault(require("react"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+var GitHub = function GitHub(_ref) {
+  var _ref$fill = _ref.fill,
+    fill = _ref$fill === void 0 ? {} : _ref$fill,
+    _ref$w = _ref.w,
+    w = _ref$w === void 0 ? 45 : _ref$w,
+    _ref$h = _ref.h,
+    h = _ref$h === void 0 ? 45 : _ref$h,
+    _ref$title = _ref.title,
+    title = _ref$title === void 0 ? "GitHub" : _ref$title;
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("svg", {
+    style: fill,
+    role: "img",
+    viewBox: "0 0 48 48",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: w,
+    height: h,
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("title", {
+      children: title
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
+      d: "M24,1.9a21.6,21.6,0,0,0-6.8,42.2c1,.2,1.8-.9,1.8-1.8V39.4c-6,1.3-7.9-2.9-7.9-2.9a6.5,6.5,0,0,0-2.2-3.2C6.9,31.9,9,32,9,32a4.3,4.3,0,0,1,3.3,2c1.7,2.9,5.5,2.6,6.7,2.1a5.4,5.4,0,0,1,.5-2.9C12.7,32,9,28,9,22.6A10.7,10.7,0,0,1,11.9,15a6.2,6.2,0,0,1,.3-6.4,8.9,8.9,0,0,1,6.4,2.9,15.1,15.1,0,0,1,5.4-.8,17.1,17.1,0,0,1,5.4.7,9,9,0,0,1,6.4-2.8,6.5,6.5,0,0,1,.4,6.4A10.7,10.7,0,0,1,39,22.6C39,28,35.3,32,28.5,33.2a5.4,5.4,0,0,1,.5,2.9v6.2a1.8,1.8,0,0,0,1.9,1.8A21.7,21.7,0,0,0,24,1.9Z"
+    })]
+  });
+};
+var _default = exports["default"] = GitHub;
