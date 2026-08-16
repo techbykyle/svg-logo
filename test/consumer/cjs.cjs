@@ -1,0 +1,10 @@
+const assert = require('node:assert/strict')
+const logos = require('@techbykyle/svg-logo')
+const Grok = require('@techbykyle/svg-logo/icons/Grok')
+const metadata = require('@techbykyle/svg-logo/metadata')
+
+assert.equal(logos.default, logos.LoadLogo)
+assert.equal(Grok.default, Grok)
+assert.equal(Grok.metadata.exportName, 'Grok')
+assert.equal(logos.Grok, Grok)
+assert.equal(metadata.getIconMetadata('grok'), Grok.metadata)

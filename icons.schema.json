@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/techbykyle/svg-logo/blob/main/icons.schema.json",
+  "title": "svg-logo icon manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "icons"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "icons": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "exportName",
+          "fileName",
+          "slug",
+          "title",
+          "source",
+          "sourceUrl",
+          "guidelinesUrl",
+          "assetLicense",
+          "colorMode",
+          "variant"
+        ],
+        "properties": {
+          "exportName": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Za-z0-9]*$"
+          },
+          "fileName": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Za-z0-9]*$"
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "guidelinesUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "assetLicense": {
+            "enum": [
+              "trademark",
+              "project-owned",
+              "open-source",
+              "unknown"
+            ]
+          },
+          "colorMode": {
+            "enum": [
+              "monochrome",
+              "duotone",
+              "multicolor",
+              "fixed-color"
+            ]
+          },
+          "variant": {
+            "enum": [
+              "logo",
+              "logomark",
+              "wordmark",
+              "combination-mark",
+              "emblem"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

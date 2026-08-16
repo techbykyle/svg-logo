@@ -1,6 +1,6 @@
 # @techbykyle/svg-logo
 
-A lightweight React icon pack containing SVG logos for popular technology and smart-home brands.
+A lightweight, tree-shakeable React library of curated SVG brand logos. It is designed to complement broad catalogs such as Simple Icons with project-specific, missing, alternate, and full-wordmark assets.
 
 ## Install
 
@@ -10,46 +10,148 @@ npm install @techbykyle/svg-logo
 
 React 17 or newer is required.
 
-## Usage
+## Recommended usage
 
-Import an individual icon by name:
+Import a single icon through its package subpath when the icon is known at build time:
 
 ```jsx
-import { GitHub } from '@techbykyle/svg-logo'
+import Grok from '@techbykyle/svg-logo/icons/Grok'
 
-export function ProfileLink() {
-    return <GitHub w={32} h={32} title="GitHub" fill={{ fill: '#181717' }} />
+export function ProviderLogo() {
+    return <Grok size={32} title="Grok" />
 }
 ```
 
-Use `LoadLogo` when the icon name is selected dynamically:
+Named imports are also supported and remain tree-shakeable in bundlers that honor ESM and `sideEffects: false`:
+
+```jsx
+import { GitHub, Ranteater } from '@techbykyle/svg-logo'
+```
+
+## Dynamic loading
+
+Use `LoadLogo` when an icon identifier is selected at runtime. It accepts the exported component name or stable lowercase slug:
 
 ```jsx
 import LoadLogo from '@techbykyle/svg-logo'
 
 export function BrandLogo({ brand }) {
-    return <LoadLogo iconPath={brand} w={48} h={48} />
+    return <LoadLogo iconPath={brand} size={48} />
 }
 ```
 
-For the smallest possible import, use an icon subpath:
-
 ```jsx
-import GitHub from '@techbykyle/svg-logo/icons/GitHub'
+<LoadLogo iconPath="GrokKFull" width={160} height={63} title="Grok" />
+<LoadLogo iconPath="grok-full" width={160} height={63} title="Grok" />
 ```
 
-Every icon accepts:
+`LoadLogo` contains the complete runtime map. Prefer direct or named imports when only a fixed subset is needed.
 
-- `w`: SVG width, default `45`
-- `h`: SVG height, default `45`
-- `title`: accessible SVG title
-- `fill`: a React style object applied to the SVG, such as `{ fill: '#fff' }`
+## Component API
 
-The package includes TypeScript declarations and both ES module and CommonJS builds.
+Every icon forwards its ref to the root `<svg>` and accepts standard SVG properties, including `width`, `height`, `fill`, `color`, `className`, `style`, ARIA attributes, event handlers, and `data-*` attributes. `size` sets both dimensions unless one is supplied explicitly.
+
+Icons are decorative by default and render with `aria-hidden="true"`. Supply `title`, `titleAccess`, `aria-label`, `aria-labelledby`, `role="img"`, or `aria-hidden={false}` when the SVG itself conveys meaning:
+
+```jsx
+<GitHub size={24} />
+<GitHub size={24} title="GitHub" />
+<GitHub size={24} aria-label="GitHub repository" />
+```
+
+The standard prop forwarding also permits direct use as a custom MUI `SvgIcon` component with `inheritViewBox`.
+
+The version 0.1 compatibility API remains available:
+
+```jsx
+<GitHub w={32} h={32} fill={{ fill: '#181717' }} />
+```
+
+`w`, `h`, and the style-object form of `fill` are deprecated. New code should use `size`, `width`, `height`, standard string `fill`, and `style`.
+
+## Colors
+
+Monochrome icons inherit `currentColor` by default:
+
+```jsx
+<Grok size={28} style={{ color: '#111' }} />
+```
+
+`Ranteater` uses a square view box and a flattened, gradient-free palette. The palette can be adjusted without changing the component:
+
+```jsx
+<Ranteater
+    size={64}
+    title="Ranteater"
+    style={{
+        '--svg-logo-ranteater-shadow': '#05080e',
+        '--svg-logo-ranteater-disc': '#70798c',
+        '--svg-logo-ranteater-stroke': '#252b36',
+        '--svg-logo-ranteater-dark': '#060b0f',
+        '--svg-logo-ranteater-body': '#efedeb',
+        '--svg-logo-ranteater-highlight': '#f2efed',
+        '--svg-logo-ranteater-detail': '#292f3a'
+    }}
+/>
+```
+
+Some legacy assets contain fixed internal colors. Consult `colorMode` metadata before assuming a root fill will recolor every path.
+
+## Metadata
+
+The manifest is generated into JavaScript, declarations, and JSON during the build:
+
+```jsx
+import {
+    getIconMetadata,
+    iconMetadata,
+    iconMetadataBySlug,
+    logoNames,
+    logoSlugs
+} from '@techbykyle/svg-logo/metadata'
+
+console.log(iconMetadata.Grok.variant)
+console.log(iconMetadataBySlug['grok-full'].exportName)
+console.log(getIconMetadata('ranteater'))
+```
+
+Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon component also exposes the same frozen record through `Icon.metadata`.
 
 ## Available icons
 
-Amazon, Apple, Aqara, Cisco, Gitea, GitHub, GitLab, GLiNet, Google, HomeAssistant, HomeDepot, Microsoft, Mqtt, MSI, Netgate, Netgear, NewEgg, OpenAi, Opensource, Reolink, Samsung, Shelly, Ubiquiti, VsCode, Wellcube, and Xiaomi.
+| Export | Slug | Variant | Color mode | Asset classification |
+| --- | --- | --- | --- | --- |
+| `Amazon` | `amazon` | logo | monochrome | trademark |
+| `Apple` | `apple` | logo | monochrome | trademark |
+| `Aqara` | `aqara` | logo | monochrome | trademark |
+| `Cisco` | `cisco` | logo | monochrome | trademark |
+| `Gitea` | `gitea` | logo | monochrome | trademark |
+| `GitHub` | `github` | logo | monochrome | trademark |
+| `GitLab` | `gitlab` | logo | monochrome | trademark |
+| `GLiNet` | `glinet` | logo | monochrome | trademark |
+| `Google` | `google` | logo | monochrome | trademark |
+| `Grok` | `grok` | logomark | monochrome | trademark |
+| `GrokKFull` | `grok-full` | combination-mark | monochrome | trademark |
+| `HomeAssistant` | `home-assistant` | logo | monochrome | trademark |
+| `HomeDepot` | `home-depot` | logo | duotone | trademark |
+| `Microsoft` | `microsoft` | logo | monochrome | trademark |
+| `Mqtt` | `mqtt` | logo | monochrome | trademark |
+| `MSI` | `msi` | logo | monochrome | trademark |
+| `Netgate` | `netgate` | logo | duotone | trademark |
+| `Netgear` | `netgear` | logo | monochrome | trademark |
+| `NewEgg` | `newegg` | logo | monochrome | trademark |
+| `OpenAi` | `openai` | logo | monochrome | trademark |
+| `Opensource` | `open-source` | logo | monochrome | unknown |
+| `Ranteater` | `ranteater` | emblem | fixed-color | project-owned |
+| `Reolink` | `reolink` | logo | monochrome | trademark |
+| `Samsung` | `samsung` | logo | monochrome | trademark |
+| `Shelly` | `shelly` | logo | monochrome | trademark |
+| `Ubiquiti` | `ubiquiti` | logo | monochrome | trademark |
+| `VsCode` | `visual-studio-code` | logo | monochrome | trademark |
+| `Wellcube` | `wellcube` | logo | monochrome | trademark |
+| `Xiaomi` | `xiaomi` | logo | monochrome | trademark |
+
+`Grok` is the standalone mark. The full supplied mark is exported with the exact requested name `GrokKFull`.
 
 ## Development
 
@@ -57,10 +159,28 @@ Amazon, Apple, Aqara, Cisco, Gitea, GitHub, GitLab, GLiNet, Google, HomeAssistan
 npm install
 npm run build
 npm run check
+npm test
+npm pack --dry-run
 ```
 
-`npm publish` automatically rebuilds and verifies the package through the `prepack` script.
+`icons.json` is the catalog source of truth. `icons.schema.json` defines its structure, and the build validates the manifest against that schema plus uniqueness, sort order, and source-file parity. The build then generates:
 
-## License
+- ESM and CommonJS entry points
+- per-icon wrappers
+- the dynamic `LoadLogo` maps
+- metadata exports and JSON
+- TypeScript declarations
 
-The source code is available under the MIT License. Brand names and logos remain trademarks of their respective owners; inclusion in this package does not imply affiliation or endorsement.
+Generated `dist` output is intentionally ignored by Git. `prepack` rebuilds and validates it before npm publication, preventing stale generated files from being published.
+
+The committed consumer tests pack the library and exercise clean ESM, CommonJS, per-icon subpath, server-rendering, MUI-compatible title forwarding, and declaration consumers. No CI workflow is included.
+
+## Version 0.2 migration
+
+Version 0.2 preserves named, default, dynamic, and per-icon imports. Existing `w`, `h`, and style-object `fill` calls continue to render. Icons no longer receive a default accessible title; this intentionally makes them decorative unless the caller supplies accessible semantics.
+
+## Code and asset licensing
+
+The package code, build tooling, tests, and original software documentation are available under the MIT License. **Individual brand assets are not necessarily covered by the MIT License.** Brand names and logos may remain subject to their owners' copyright, trademark, and brand-usage policies. Inclusion does not imply affiliation, sponsorship, or endorsement.
+
+See [BRAND_ASSETS.md](./BRAND_ASSETS.md) and the generated metadata for provenance and classification details.

@@ -1,7 +1,7 @@
 {
   "name": "@techbykyle/svg-logo",
-  "version": "0.1.0",
-  "description": "A lightweight React SVG logo icon pack.",
+  "version": "0.2.0",
+  "description": "A lightweight, tree-shakeable React SVG brand-logo library.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/index.d.ts",
@@ -12,14 +12,23 @@
       "require": "./dist/cjs/index.js"
     },
     "./icons/*": {
-      "types": "./dist/types/Logo/*.d.ts",
-      "import": "./dist/esm/Logo/*.js",
-      "require": "./dist/cjs/Logo/*.js"
+      "types": "./dist/types/icons/*.d.ts",
+      "import": "./dist/esm/icons/*.js",
+      "require": "./dist/cjs/icons/*.js"
     },
+    "./metadata": {
+      "types": "./dist/metadata.d.ts",
+      "import": "./dist/esm/metadata.js",
+      "require": "./dist/cjs/metadata.js"
+    },
+    "./metadata.json": "./dist/metadata.json",
     "./package.json": "./package.json"
   },
   "files": [
     "dist",
+    "icons.json",
+    "icons.schema.json",
+    "BRAND_ASSETS.md",
     "LICENSE",
     "README.md"
   ],
@@ -27,24 +36,30 @@
   "scripts": {
     "build": "node build.js",
     "check": "node scripts/check-package.js",
-    "prepack": "node build.js && node scripts/check-package.js"
+    "test": "node scripts/test-consumers.js",
+    "test:consumers": "node scripts/test-consumers.js",
+    "prepack": "npm run build && npm run check"
   },
   "peerDependencies": {
     "react": ">=17.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
-    "@babel/plugin-transform-react-jsx": "^7.27.1",
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "keywords": [
     "react",
     "svg",
+    "brand",
     "logo",
     "icons",
     "icon-pack",
-    "component"
+    "component",
+    "brand-icons"
   ],
   "author": "techbykyle",
   "license": "MIT",
