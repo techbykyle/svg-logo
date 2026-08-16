@@ -1,6 +1,6 @@
 {
   "name": "@techbykyle/svg-logo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A lightweight React SVG logo icon pack.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
