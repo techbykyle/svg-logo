@@ -53,6 +53,7 @@
     "check": "node scripts/check-package.js",
     "test": "node scripts/test-consumers.js",
     "test:consumers": "node scripts/test-consumers.js",
+    "version": "npm test",
     "prepack": "npm run build && npm run check"
   },
   "peerDependencies": {

@@ -6,6 +6,7 @@ const { loadManifest, toPublicMetadata } = require('./manifest.js')
 
 const rootDir = path.join(__dirname, '..')
 const packageJson = require(path.join(rootDir, 'package.json'))
+const packageLock = require(path.join(rootDir, 'package-lock.json'))
 const manifest = loadManifest(rootDir)
 const icons = manifest.icons
 
@@ -40,7 +41,25 @@ function assertConditionalExport(exportName, expected) {
     }
 }
 
-assert(packageJson.version === '0.2.1', 'package.json must be version 0.2.1')
+assert(
+    typeof packageJson.version === 'string' &&
+        packageJson.version.length > 0,
+    'package.json must define a version'
+)
+
+assert(
+    packageLock.version === packageJson.version,
+    `package-lock.json version (${packageLock.version}) must match ` +
+        `package.json version (${packageJson.version})`
+)
+
+assert(
+    packageLock.packages?.['']?.version === packageJson.version,
+    `package-lock.json root package version ` +
+        `(${packageLock.packages?.['']?.version}) must match ` +
+        `package.json version (${packageJson.version})`
+)
+
 assert(packageJson.private !== true, 'The package is marked private and cannot be published')
 assert(packageJson.sideEffects === false, 'sideEffects must remain false for tree-shaking')
 assert(packageJson.peerDependencies.react === '>=17.0.0', 'React peer dependency must remain >=17.0.0')
