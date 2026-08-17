@@ -14,6 +14,18 @@
       "variant": "logo"
     },
     {
+      "exportName": "Anthropic",
+      "fileName": "Anthropic",
+      "slug": "anthropic",
+      "title": "Anthropic",
+      "source": "Anthropic press kit — Anthropic symbol (Slate)",
+      "sourceUrl": "https://www.anthropic.com/news",
+      "guidelinesUrl": null,
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
       "exportName": "Apple",
       "fileName": "Apple",
       "slug": "apple",
@@ -50,6 +62,18 @@
       "variant": "logo"
     },
     {
+      "exportName": "ClaudeCode",
+      "fileName": "ClaudeCode",
+      "slug": "claude-code",
+      "title": "Claude Code",
+      "source": "Anthropic press kit — Claude Spark (Clay)",
+      "sourceUrl": "https://www.anthropic.com/news",
+      "guidelinesUrl": null,
+      "assetLicense": "trademark",
+      "colorMode": "fixed-color",
+      "variant": "logomark"
+    },
+    {
       "exportName": "Gitea",
       "fileName": "Gitea",
       "slug": "gitea",
@@ -72,6 +96,18 @@
       "assetLicense": "trademark",
       "colorMode": "monochrome",
       "variant": "logo"
+    },
+    {
+      "exportName": "GitHubCopilot",
+      "fileName": "GitHubCopilot",
+      "slug": "github-copilot",
+      "title": "GitHub Copilot",
+      "source": "GitHub Primer Octicons — copilot-24.svg",
+      "sourceUrl": "https://github.com/primer/octicons/blob/0e21a4c2d8449102f10e533d241f04797af0914c/icons/copilot-24.svg",
+      "guidelinesUrl": "https://brand.github.com/brand-identity/copilot",
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
     },
     {
       "exportName": "GitLab",
@@ -240,6 +276,18 @@
       "assetLicense": "trademark",
       "colorMode": "monochrome",
       "variant": "logo"
+    },
+    {
+      "exportName": "OpenCode",
+      "fileName": "OpenCode",
+      "slug": "opencode",
+      "title": "OpenCode",
+      "source": "OpenCode official repository — favicon-v3.svg",
+      "sourceUrl": "https://github.com/anomalyco/opencode/blob/1c965451b537e1af4bff12c163200f762a6a0364/packages/web/public/favicon-v3.svg",
+      "guidelinesUrl": null,
+      "assetLicense": "trademark",
+      "colorMode": "fixed-color",
+      "variant": "logomark"
     },
     {
       "exportName": "Opensource",
