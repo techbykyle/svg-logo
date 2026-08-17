@@ -8,6 +8,15 @@ Records classified as `trademark` should be treated as identification assets bel
 
 Records classified as `project-owned` identify artwork controlled by the package maintainer or the named project. Their inclusion does not transfer ownership or create a separate trademark license.
 
+## Newly added in 0.2.5
+
+| Export | Source basis | Treatment | Classification |
+| --- | --- | --- | --- |
+| `Anthropic` | Anthropic press kit, `Anthropic symbol - Slate.svg` | Original view box and vector paths retained; the single Slate fill was removed so the mark inherits `currentColor`. | `trademark` |
+| `ClaudeCode` | Anthropic press kit, `Claude Spark - Clay.svg` | Original view box, vector path, and Clay `#D97757` fill retained. Exported as the Claude Code identifier rather than claiming a separate Claude Code wordmark. | `trademark` |
+| `GitHubCopilot` | GitHub Primer Octicons, `copilot-24.svg` | Official 24px vector paths retained without fixed fills so the mark inherits `currentColor`. | `trademark` |
+| `OpenCode` | OpenCode official repository, `favicon-v3.svg` | Redundant nested SVG and media-query wrapper removed; official view box, geometry, and fixed three-color palette retained. | `trademark` |
+
 ## Newly added in 0.2.0
 
 | Export | Source basis | Treatment | Classification |
