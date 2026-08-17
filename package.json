@@ -1,6 +1,6 @@
 {
   "name": "@techbykyle/svg-logo",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A lightweight, tree-shakeable React SVG brand-logo library.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
