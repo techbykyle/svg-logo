@@ -74,6 +74,18 @@
       "variant": "logomark"
     },
     {
+      "exportName": "ClaudeCodeMonochrome",
+      "fileName": "ClaudeCodeMonochrome",
+      "slug": "claude-code-monochrome",
+      "title": "Claude Code",
+      "source": "Monochrome UI variant derived from Anthropic press kit — Claude Spark (Clay)",
+      "sourceUrl": "https://www.anthropic.com/news",
+      "guidelinesUrl": null,
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
       "exportName": "Gitea",
       "fileName": "Gitea",
       "slug": "gitea",
@@ -290,6 +302,18 @@
       "variant": "logomark"
     },
     {
+      "exportName": "OpenCodeMonochrome",
+      "fileName": "OpenCodeMonochrome",
+      "slug": "opencode-monochrome",
+      "title": "OpenCode",
+      "source": "Monochrome UI variant derived from OpenCode official favicon geometry",
+      "sourceUrl": "https://github.com/anomalyco/opencode/blob/1c965451b537e1af4bff12c163200f762a6a0364/packages/web/public/favicon-v3.svg",
+      "guidelinesUrl": null,
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
       "exportName": "Opensource",
       "fileName": "Opensource",
       "slug": "open-source",
@@ -391,6 +415,18 @@
       "slug": "xai",
       "title": "xAI",
       "source": "xAI/SpaceXAI media kit — symbol, black, squared",
+      "sourceUrl": "https://x.ai/legal/brand-guidelines",
+      "guidelinesUrl": "https://x.ai/legal/brand-guidelines",
+      "assetLicense": "trademark",
+      "colorMode": "fixed-color",
+      "variant": "logomark"
+    },
+    {
+      "exportName": "XAISquareTransparent",
+      "fileName": "XAISquareTransparent",
+      "slug": "xai-square-transparent",
+      "title": "xAI",
+      "source": "Transparent-background UI variant derived from xAI/SpaceXAI media kit — symbol, black, squared",
       "sourceUrl": "https://x.ai/legal/brand-guidelines",
       "guidelinesUrl": "https://x.ai/legal/brand-guidelines",
       "assetLicense": "trademark",

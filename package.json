@@ -50,7 +50,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "node build.js && node scripts/build-types.js",
-    "check": "node scripts/check-package.js",
+    "check": "node scripts/check-package.js && node scripts/check-variants.js",
     "test": "node scripts/test-consumers.js",
     "test:consumers": "node scripts/test-consumers.js",
     "version": "npm test",
