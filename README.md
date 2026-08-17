@@ -25,7 +25,7 @@ export function ProviderLogo() {
 Named imports are also supported and remain tree-shakeable in bundlers that honor ESM and `sideEffects: false`:
 
 ```jsx
-import { GitHub, Ranteater } from '@techbykyle/svg-logo'
+import { Anthropic, ClaudeCode, GitHubCopilot, OpenCode } from '@techbykyle/svg-logo'
 ```
 
 ## Dynamic loading
@@ -77,6 +77,8 @@ Monochrome icons inherit `currentColor` by default:
 <Grok size={28} style={{ color: '#111' }} />
 ```
 
+`Anthropic` and `GitHubCopilot` are monochrome and inherit `currentColor`. `ClaudeCode` retains Anthropic's official Clay fill, and `OpenCode` retains the fixed colors from its official app icon.
+
 `Ranteater` uses a square view box and a flattened, gradient-free palette. The palette can be adjusted without changing the component:
 
 ```jsx
@@ -122,11 +124,14 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | Export | Slug | Variant | Color mode | Asset classification |
 | --- | --- | --- | --- | --- |
 | `Amazon` | `amazon` | logo | monochrome | trademark |
+| `Anthropic` | `anthropic` | logomark | monochrome | trademark |
 | `Apple` | `apple` | logo | monochrome | trademark |
 | `Aqara` | `aqara` | logo | monochrome | trademark |
 | `Cisco` | `cisco` | logo | monochrome | trademark |
+| `ClaudeCode` | `claude-code` | logomark | fixed-color | trademark |
 | `Gitea` | `gitea` | logo | monochrome | trademark |
 | `GitHub` | `github` | logo | monochrome | trademark |
+| `GitHubCopilot` | `github-copilot` | logomark | monochrome | trademark |
 | `GitLab` | `gitlab` | logo | monochrome | trademark |
 | `GLiNet` | `glinet` | logo | monochrome | trademark |
 | `Google` | `google` | logo | monochrome | trademark |
@@ -141,6 +146,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `Netgear` | `netgear` | logo | monochrome | trademark |
 | `NewEgg` | `newegg` | logo | monochrome | trademark |
 | `OpenAi` | `openai` | logo | monochrome | trademark |
+| `OpenCode` | `opencode` | logomark | fixed-color | trademark |
 | `Opensource` | `open-source` | logo | monochrome | unknown |
 | `Ranteater` | `ranteater` | emblem | fixed-color | project-owned |
 | `Reolink` | `reolink` | logo | monochrome | trademark |
@@ -152,6 +158,8 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `Xiaomi` | `xiaomi` | logo | monochrome | trademark |
 
 `Grok` is the standalone mark. The full supplied mark is exported with the exact requested name `GrokKFull`.
+
+`ClaudeCode` uses Anthropic's official Claude Spark (Clay) press-kit asset as the Claude Code product identifier; it is not a separate Claude Code wordmark.
 
 ## Development
 
