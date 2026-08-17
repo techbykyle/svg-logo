@@ -1,0 +1,236 @@
+name: Prepare, validate, and release svg-logo v0.2.5
+
+on:
+  push:
+    branches:
+      - agent/add-xai-logo
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: svg-logo-v0.2.5-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/agent/add-xai-logo' && startsWith(github.event.head_commit.message, 'Add xAI release automation')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out feature branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/add-xai-logo
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 26
+          registry-url: https://registry.npmjs.org
+          cache: npm
+
+      - name: Register and document xAI
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs')
+
+          const manifestPath = 'icons.json'
+          const readmePath = 'README.md'
+          const brandAssetsPath = 'BRAND_ASSETS.md'
+
+          const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'))
+          if (manifest.icons.some((icon) => icon.exportName === 'XAI' || icon.slug === 'xai')) {
+            throw new Error('XAI is already registered in icons.json')
+          }
+
+          manifest.icons.push({
+            exportName: 'XAI',
+            fileName: 'XAI',
+            slug: 'xai',
+            title: 'xAI',
+            source: 'xAI/SpaceXAI media kit — symbol, black, squared',
+            sourceUrl: 'https://x.ai/legal/brand-guidelines',
+            guidelinesUrl: 'https://x.ai/legal/brand-guidelines',
+            assetLicense: 'trademark',
+            colorMode: 'fixed-color',
+            variant: 'logomark'
+          })
+          manifest.icons.sort((left, right) =>
+            left.exportName.localeCompare(right.exportName, 'en', { sensitivity: 'base' })
+          )
+          fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`)
+
+          let readme = fs.readFileSync(readmePath, 'utf8')
+          const importBefore = "import { Anthropic, ClaudeCode, GitHubCopilot, OpenCode } from '@techbykyle/svg-logo'"
+          const importAfter = "import { Anthropic, ClaudeCode, GitHubCopilot, OpenCode, XAI } from '@techbykyle/svg-logo'"
+          if (!readme.includes(importBefore)) {
+            throw new Error('README named-import example was not found')
+          }
+          readme = readme.replace(importBefore, importAfter)
+
+          const colorsBefore = "`Anthropic` and `GitHubCopilot` are monochrome and inherit `currentColor`. `ClaudeCode` retains Anthropic's official Clay fill, and `OpenCode` retains the fixed colors from its official app icon."
+          const colorsAfter = `${colorsBefore} \`XAI\` preserves the official black-on-white squared treatment and is not recolorable through the root \`fill\` or \`color\` props.`
+          if (!readme.includes(colorsBefore)) {
+            throw new Error('README color guidance was not found')
+          }
+          readme = readme.replace(colorsBefore, colorsAfter)
+
+          const catalogBefore = '| `Wellcube` | `wellcube` | logo | monochrome | trademark |\n| `Xiaomi` | `xiaomi` | logo | monochrome | trademark |'
+          const catalogAfter = '| `Wellcube` | `wellcube` | logo | monochrome | trademark |\n| `XAI` | `xai` | logomark | fixed-color | trademark |\n| `Xiaomi` | `xiaomi` | logo | monochrome | trademark |'
+          if (!readme.includes(catalogBefore)) {
+            throw new Error('README catalog insertion point was not found')
+          }
+          readme = readme.replace(catalogBefore, catalogAfter)
+
+          const claudeNote = "`ClaudeCode` uses Anthropic's official Claude Spark (Clay) press-kit asset as the Claude Code product identifier; it is not a separate Claude Code wordmark."
+          const xaiNote = "`XAI` uses the official squared black-on-white media-kit asset exactly as provided. Do not recolor it, remove its white background, or otherwise alter it; consult the linked xAI brand guidelines before use."
+          if (!readme.includes(claudeNote)) {
+            throw new Error('README ClaudeCode note was not found')
+          }
+          readme = readme.replace(claudeNote, `${claudeNote}\n\n${xaiNote}`)
+          fs.writeFileSync(readmePath, readme)
+
+          let brandAssets = fs.readFileSync(brandAssetsPath, 'utf8')
+          const openCodeRow = '| `OpenCode` | OpenCode official repository, `favicon-v3.svg` | Redundant nested SVG and media-query wrapper removed; official view box, geometry, and fixed three-color palette retained. | `trademark` |'
+          const xaiRow = '| `XAI` | xAI/SpaceXAI media kit, `spacexai - symbol - black - squared.svg` | Official 600×600 view box, clipping, white square background, and black vector paths retained exactly; only SVG-to-JSX attribute syntax was changed. | `trademark` |'
+          if (!brandAssets.includes(openCodeRow)) {
+            throw new Error('BRAND_ASSETS OpenCode row was not found')
+          }
+          brandAssets = brandAssets.replace(openCodeRow, `${openCodeRow}\n${xaiRow}`)
+
+          const releaseHeading = '## Newly added in 0.2.0'
+          const xaiGuidance = "`XAI` remains fixed-color because xAI's brand guidelines require its logos to be used exactly as provided, without alteration or adjustment."
+          if (!brandAssets.includes(releaseHeading)) {
+            throw new Error('BRAND_ASSETS release heading was not found')
+          }
+          brandAssets = brandAssets.replace(releaseHeading, `${xaiGuidance}\n\n${releaseHeading}`)
+          fs.writeFileSync(brandAssetsPath, brandAssets)
+          NODE
+
+      - name: Install dependencies
+        run: npm ci --include=dev
+
+      - name: Test package
+        run: npm test
+
+      - name: Verify package contents
+        run: npm pack --dry-run
+
+      - name: Commit prepared feature
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add icons.json README.md BRAND_ASSETS.md
+          git diff --cached --check
+          git commit -m "Prepare xAI logo release"
+          git push origin HEAD:agent/add-xai-logo
+
+  validate:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out pull request
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 26
+          registry-url: https://registry.npmjs.org
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --include=dev
+
+      - name: Test package
+        run: npm test
+
+      - name: Verify package contents
+        run: npm pack --dry-run
+
+  release:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && startsWith(github.event.head_commit.message, 'Add xAI logo')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 26
+          registry-url: https://registry.npmjs.org
+          cache: npm
+
+      - name: Verify release preconditions
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(node -p "require('./package.json').version")" = "0.2.4"
+          test "$(node -p "require('./package-lock.json').version")" = "0.2.4"
+          test "$(node -p "require('./package-lock.json').packages[''].version")" = "0.2.4"
+          if git rev-parse -q --verify refs/tags/v0.2.5 >/dev/null; then
+            echo "v0.2.5 already exists" >&2
+            exit 1
+          fi
+          if npm view @techbykyle/svg-logo@0.2.5 version --json >/dev/null 2>&1; then
+            echo "@techbykyle/svg-logo@0.2.5 is already published" >&2
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: npm ci --include=dev
+
+      - name: Set release version
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs')
+
+          const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+          const packageLock = JSON.parse(fs.readFileSync('package-lock.json', 'utf8'))
+
+          packageJson.version = '0.2.5'
+          packageLock.version = '0.2.5'
+          packageLock.packages[''].version = '0.2.5'
+
+          fs.writeFileSync('package.json', `${JSON.stringify(packageJson, null, 2)}\n`)
+          fs.writeFileSync('package-lock.json', `${JSON.stringify(packageLock, null, 2)}\n`)
+          NODE
+
+      - name: Test release candidate
+        run: npm test
+
+      - name: Verify package contents
+        run: npm pack --dry-run
+
+      - name: Commit and tag release
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/release-svg-logo-v0.2.5.yml
+          git add package.json package-lock.json
+          git commit -m "Release svg-logo v0.2.5"
+          git tag -a v0.2.5 -m "v0.2.5"
+          git push --atomic origin HEAD:main refs/tags/v0.2.5

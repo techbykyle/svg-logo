@@ -25,7 +25,7 @@ export function ProviderLogo() {
 Named imports are also supported and remain tree-shakeable in bundlers that honor ESM and `sideEffects: false`:
 
 ```jsx
-import { Anthropic, ClaudeCode, GitHubCopilot, OpenCode } from '@techbykyle/svg-logo'
+import { Anthropic, ClaudeCode, GitHubCopilot, OpenCode, XAI } from '@techbykyle/svg-logo'
 ```
 
 ## Dynamic loading
@@ -77,7 +77,7 @@ Monochrome icons inherit `currentColor` by default:
 <Grok size={28} style={{ color: '#111' }} />
 ```
 
-`Anthropic` and `GitHubCopilot` are monochrome and inherit `currentColor`. `ClaudeCode` retains Anthropic's official Clay fill, and `OpenCode` retains the fixed colors from its official app icon.
+`Anthropic` and `GitHubCopilot` are monochrome and inherit `currentColor`. `ClaudeCode` retains Anthropic's official Clay fill, and `OpenCode` retains the fixed colors from its official app icon. `XAI` preserves the official black-on-white squared treatment and is not recolorable through the root `fill` or `color` props.
 
 `Ranteater` uses a square view box and a flattened, gradient-free palette. The palette can be adjusted without changing the component:
 
@@ -155,11 +155,14 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `Ubiquiti` | `ubiquiti` | logo | monochrome | trademark |
 | `VsCode` | `visual-studio-code` | logo | monochrome | trademark |
 | `Wellcube` | `wellcube` | logo | monochrome | trademark |
+| `XAI` | `xai` | logomark | fixed-color | trademark |
 | `Xiaomi` | `xiaomi` | logo | monochrome | trademark |
 
 `Grok` is the standalone mark. The full supplied mark is exported with the exact requested name `GrokKFull`.
 
 `ClaudeCode` uses Anthropic's official Claude Spark (Clay) press-kit asset as the Claude Code product identifier; it is not a separate Claude Code wordmark.
+
+`XAI` uses the official squared black-on-white media-kit asset exactly as provided. Do not recolor it, remove its white background, or otherwise alter it; consult the linked xAI brand guidelines before use.
 
 ## Development
 

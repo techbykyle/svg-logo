@@ -386,6 +386,18 @@
       "variant": "logo"
     },
     {
+      "exportName": "XAI",
+      "fileName": "XAI",
+      "slug": "xai",
+      "title": "xAI",
+      "source": "xAI/SpaceXAI media kit — symbol, black, squared",
+      "sourceUrl": "https://x.ai/legal/brand-guidelines",
+      "guidelinesUrl": "https://x.ai/legal/brand-guidelines",
+      "assetLicense": "trademark",
+      "colorMode": "fixed-color",
+      "variant": "logomark"
+    },
+    {
       "exportName": "Xiaomi",
       "fileName": "Xiaomi",
       "slug": "xiaomi",

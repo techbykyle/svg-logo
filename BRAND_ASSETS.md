@@ -16,6 +16,9 @@ Records classified as `project-owned` identify artwork controlled by the package
 | `ClaudeCode` | Anthropic press kit, `Claude Spark - Clay.svg` | Original view box, vector path, and Clay `#D97757` fill retained. Exported as the Claude Code identifier rather than claiming a separate Claude Code wordmark. | `trademark` |
 | `GitHubCopilot` | GitHub Primer Octicons, `copilot-24.svg` | Official 24px vector paths retained without fixed fills so the mark inherits `currentColor`. | `trademark` |
 | `OpenCode` | OpenCode official repository, `favicon-v3.svg` | Redundant nested SVG and media-query wrapper removed; official view box, geometry, and fixed three-color palette retained. | `trademark` |
+| `XAI` | xAI/SpaceXAI media kit, `spacexai - symbol - black - squared.svg` | Official 600×600 view box, clipping, white square background, and black vector paths retained exactly; only SVG-to-JSX attribute syntax was changed. | `trademark` |
+
+`XAI` remains fixed-color because xAI's brand guidelines require its logos to be used exactly as provided, without alteration or adjustment.
 
 ## Newly added in 0.2.0
 
