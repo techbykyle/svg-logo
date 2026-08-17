@@ -8,6 +8,16 @@ Records classified as `trademark` should be treated as identification assets bel
 
 Records classified as `project-owned` identify artwork controlled by the package maintainer or the named project. Their inclusion does not transfer ownership or create a separate trademark license.
 
+## Newly added in 0.2.6
+
+| Export | Source basis | Treatment | Classification |
+| --- | --- | --- | --- |
+| `ClaudeCodeMonochrome` | Anthropic press kit, `Claude Spark - Clay.svg` | Official 94×94 view box and path geometry retained; the Clay fill is omitted so the path inherits `currentColor`. | `trademark` |
+| `OpenCodeMonochrome` | OpenCode official repository, `favicon-v3.svg` | Official two-path logo geometry retained; the fixed background rectangle and explicit path fills are omitted so both paths inherit `currentColor`. | `trademark` |
+| `XAISquareTransparent` | xAI/SpaceXAI media kit, `spacexai - symbol - black - squared.svg` | Official 600×600 view box, clipping boundary, and black paths retained; only the visible white background rectangle is omitted. | `trademark` |
+
+The existing `ClaudeCode`, `OpenCode`, and `XAI` exports remain unchanged as the official-color assets. The new exports are package-provided UI variants for uniform icon systems; they are not additional official brand-kit files.
+
 ## Newly added in 0.2.5
 
 | Export | Source basis | Treatment | Classification |

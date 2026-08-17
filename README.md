@@ -25,7 +25,7 @@ export function ProviderLogo() {
 Named imports are also supported and remain tree-shakeable in bundlers that honor ESM and `sideEffects: false`:
 
 ```jsx
-import { Anthropic, ClaudeCode, GitHubCopilot, OpenCode, XAI } from '@techbykyle/svg-logo'
+import { Anthropic, ClaudeCode, ClaudeCodeMonochrome, GitHubCopilot, OpenCode, OpenCodeMonochrome, XAI, XAISquareTransparent } from '@techbykyle/svg-logo'
 ```
 
 ## Dynamic loading
@@ -77,7 +77,7 @@ Monochrome icons inherit `currentColor` by default:
 <Grok size={28} style={{ color: '#111' }} />
 ```
 
-`Anthropic` and `GitHubCopilot` are monochrome and inherit `currentColor`. `ClaudeCode` retains Anthropic's official Clay fill, and `OpenCode` retains the fixed colors from its official app icon. `XAI` preserves the official black-on-white squared treatment and is not recolorable through the root `fill` or `color` props.
+`Anthropic`, `ClaudeCodeMonochrome`, `GitHubCopilot`, and `OpenCodeMonochrome` are monochrome and inherit `currentColor`. `ClaudeCode` retains Anthropic's official Clay fill, while `OpenCode` retains the fixed colors from its official app icon. `XAI` preserves the official black-on-white squared treatment. `XAISquareTransparent` keeps the official black symbol and clipping geometry while omitting only the visible white square background; both xAI exports remain fixed-color.
 
 `Ranteater` uses a square view box and a flattened, gradient-free palette. The palette can be adjusted without changing the component:
 
@@ -129,6 +129,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `Aqara` | `aqara` | logo | monochrome | trademark |
 | `Cisco` | `cisco` | logo | monochrome | trademark |
 | `ClaudeCode` | `claude-code` | logomark | fixed-color | trademark |
+| `ClaudeCodeMonochrome` | `claude-code-monochrome` | logomark | monochrome | trademark |
 | `Gitea` | `gitea` | logo | monochrome | trademark |
 | `GitHub` | `github` | logo | monochrome | trademark |
 | `GitHubCopilot` | `github-copilot` | logomark | monochrome | trademark |
@@ -147,6 +148,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `NewEgg` | `newegg` | logo | monochrome | trademark |
 | `OpenAi` | `openai` | logo | monochrome | trademark |
 | `OpenCode` | `opencode` | logomark | fixed-color | trademark |
+| `OpenCodeMonochrome` | `opencode-monochrome` | logomark | monochrome | trademark |
 | `Opensource` | `open-source` | logo | monochrome | unknown |
 | `Ranteater` | `ranteater` | emblem | fixed-color | project-owned |
 | `Reolink` | `reolink` | logo | monochrome | trademark |
@@ -156,13 +158,18 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `VsCode` | `visual-studio-code` | logo | monochrome | trademark |
 | `Wellcube` | `wellcube` | logo | monochrome | trademark |
 | `XAI` | `xai` | logomark | fixed-color | trademark |
+| `XAISquareTransparent` | `xai-square-transparent` | logomark | fixed-color | trademark |
 | `Xiaomi` | `xiaomi` | logo | monochrome | trademark |
 
 `Grok` is the standalone mark. The full supplied mark is exported with the exact requested name `GrokKFull`.
 
 `ClaudeCode` uses Anthropic's official Claude Spark (Clay) press-kit asset as the Claude Code product identifier; it is not a separate Claude Code wordmark.
 
-`XAI` uses the official squared black-on-white media-kit asset exactly as provided. Do not recolor it, remove its white background, or otherwise alter it; consult the linked xAI brand guidelines before use.
+`ClaudeCodeMonochrome` preserves the same Claude Spark view box and path geometry while inheriting `currentColor` for uniform provider-icon systems.
+
+`OpenCodeMonochrome` preserves the two official OpenCode logo paths, removes the fixed background rectangle, and lets both paths inherit `currentColor`.
+
+`XAI` preserves the official squared black-on-white media-kit asset exactly as provided. `XAISquareTransparent` is a package-provided UI variant that preserves the same 600×600 view box, clipping boundary, and black symbol paths while omitting only the visible white background rectangle. Neither xAI export inherits `currentColor`.
 
 ## Development
 
