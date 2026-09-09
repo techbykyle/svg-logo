@@ -2,6 +2,18 @@
   "schemaVersion": 1,
   "icons": [
     {
+      "exportName": "ACP",
+      "fileName": "ACP",
+      "slug": "acp",
+      "title": "ACP",
+      "source": "User-supplied ACP SVG asset",
+      "sourceUrl": null,
+      "guidelinesUrl": null,
+      "assetLicense": "unknown",
+      "colorMode": "monochrome",
+      "variant": "logo"
+    },
+    {
       "exportName": "Amazon",
       "fileName": "Amazon",
       "slug": "amazon",

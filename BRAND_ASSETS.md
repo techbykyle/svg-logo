@@ -8,6 +8,12 @@ Records classified as `trademark` should be treated as identification assets bel
 
 Records classified as `project-owned` identify artwork controlled by the package maintainer or the named project. Their inclusion does not transfer ownership or create a separate trademark license.
 
+## Newly added in 0.2.7
+
+| Export | Source basis | Treatment | Classification |
+| --- | --- | --- | --- |
+| `ACP` | User-supplied `acp_mark-black.svg` | Original vector path and wide view box retained; fixed black fill removed so the mark inherits `currentColor`. | `unknown` |
+
 ## Newly added in 0.2.6
 
 | Export | Source basis | Treatment | Classification |

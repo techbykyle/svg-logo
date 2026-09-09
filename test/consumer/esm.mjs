@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import LoadLogo, {
+    ACP,
     GitHub,
     Grok,
     GrokKFull,
@@ -12,11 +13,13 @@ import LoadLogo, {
 } from '@techbykyle/svg-logo'
 
 assert.ok(LoadLogo)
+assert.ok(ACP)
 assert.ok(GitHub)
 assert.ok(Grok)
 assert.ok(GrokKFull)
 assert.ok(Ranteater)
 assert.equal(Grok.metadata.exportName, 'Grok')
+assert.equal(ACP.metadata.slug, 'acp')
 assert.equal(GrokKFull.metadata.slug, 'grok-full')
 assert.equal(Ranteater.metadata.colorMode, 'fixed-color')
 assert.equal(iconMetadata.Grok, Grok.metadata)

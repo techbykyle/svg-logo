@@ -123,6 +123,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 
 | Export | Slug | Variant | Color mode | Asset classification |
 | --- | --- | --- | --- | --- |
+| `ACP` | `acp` | logo | monochrome | unknown |
 | `Amazon` | `amazon` | logo | monochrome | trademark |
 | `Anthropic` | `anthropic` | logomark | monochrome | trademark |
 | `Apple` | `apple` | logo | monochrome | trademark |
