@@ -218,6 +218,18 @@
       "variant": "logo"
     },
     {
+      "exportName": "LinkedIn",
+      "fileName": "LinkedIn",
+      "slug": "linkedin",
+      "title": "LinkedIn",
+      "source": "Simple Icons legacy LinkedIn icon — linkedin.svg",
+      "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/5.0.0/icons/linkedin.svg",
+      "guidelinesUrl": "https://brand.linkedin.com/policies",
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logo"
+    },
+    {
       "exportName": "Microsoft",
       "fileName": "Microsoft",
       "slug": "microsoft",

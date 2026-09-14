@@ -141,6 +141,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `GrokKFull` | `grok-full` | combination-mark | monochrome | trademark |
 | `HomeAssistant` | `home-assistant` | logo | monochrome | trademark |
 | `HomeDepot` | `home-depot` | logo | duotone | trademark |
+| `LinkedIn` | `linkedin` | logo | monochrome | trademark |
 | `Microsoft` | `microsoft` | logo | monochrome | trademark |
 | `Mqtt` | `mqtt` | logo | monochrome | trademark |
 | `MSI` | `msi` | logo | monochrome | trademark |
