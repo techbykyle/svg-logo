@@ -202,7 +202,8 @@ const packOutput = childProcess.execFileSync(
     ['pack', '--dry-run', '--ignore-scripts', '--json'],
     { cwd: rootDir, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }
 )
-const [packed] = JSON.parse(packOutput)
+const packResult = JSON.parse(packOutput)
+const packed = Array.isArray(packResult) ? packResult[0] : packResult
 assert(packed, 'npm pack dry-run did not return package metadata')
 for (const requiredPackedFile of [
     'BRAND_ASSETS.md',
