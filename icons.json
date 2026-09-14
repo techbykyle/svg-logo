@@ -290,6 +290,18 @@
       "variant": "logo"
     },
     {
+      "exportName": "Npm",
+      "fileName": "Npm",
+      "slug": "npm",
+      "title": "npm",
+      "source": "Simple Icons npm icon — npm.svg",
+      "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/develop/icons/npm.svg",
+      "guidelinesUrl": null,
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logo"
+    },
+    {
       "exportName": "OpenAi",
       "fileName": "OpenAi",
       "slug": "openai",

@@ -147,6 +147,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `Netgate` | `netgate` | logo | duotone | trademark |
 | `Netgear` | `netgear` | logo | monochrome | trademark |
 | `NewEgg` | `newegg` | logo | monochrome | trademark |
+| `Npm` | `npm` | logo | monochrome | trademark |
 | `OpenAi` | `openai` | logo | monochrome | trademark |
 | `OpenCode` | `opencode` | logomark | fixed-color | trademark |
 | `OpenCodeMonochrome` | `opencode-monochrome` | logomark | monochrome | trademark |

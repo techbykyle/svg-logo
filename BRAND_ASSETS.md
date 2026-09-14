@@ -8,6 +8,12 @@ Records classified as `trademark` should be treated as identification assets bel
 
 Records classified as `project-owned` identify artwork controlled by the package maintainer or the named project. Their inclusion does not transfer ownership or create a separate trademark license.
 
+## Newly added in 0.2.8
+
+| Export | Source basis | Treatment | Classification |
+| --- | --- | --- | --- |
+| `Npm` | Simple Icons `npm.svg` | Official 24×24 npm mark retained as a single path; the fixed fill is omitted so the mark inherits `currentColor`. | `trademark` |
+
 ## Newly added in 0.2.7
 
 | Export | Source basis | Treatment | Classification |
