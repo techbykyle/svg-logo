@@ -36,7 +36,7 @@ Use `LoadLogo` when an icon identifier is selected at runtime. It accepts the ex
 import LoadLogo from '@techbykyle/svg-logo'
 
 export function BrandLogo({ brand }) {
-    return <LoadLogo iconPath={brand} size={48} />
+    return <LoadLogo iconPath={brand} width={48} />
 }
 ```
 
@@ -49,7 +49,14 @@ export function BrandLogo({ brand }) {
 
 ## Component API
 
-Every icon forwards its ref to the root `<svg>` and accepts standard SVG properties, including `width`, `height`, `fill`, `color`, `className`, `style`, ARIA attributes, event handlers, and `data-*` attributes. `size` sets both dimensions unless one is supplied explicitly.
+Every icon forwards its ref to the root `<svg>` and accepts standard SVG properties, including `width`, `height`, `fill`, `color`, `className`, `style`, ARIA attributes, event handlers, and `data-*` attributes. `size` sets both dimensions to the same value for backwards compatibility. When `size` is omitted, a logo with only `width` or only `height` uses the SVG's intrinsic aspect ratio for the other dimension. Logos without explicit dimensions also use that ratio when needed. Pass both `width` and `height` to override it explicitly.
+
+```jsx
+<GrokKFull width={160} /> // 160 × 62.5
+<Aqara height={28} />     // 96 × 28
+```
+
+You can inspect the source geometry through `Icon.metadata.viewBox` and `Icon.metadata.aspectRatio`.
 
 Icons are decorative by default and render with `aria-hidden="true"`. Supply `title`, `titleAccess`, `aria-label`, `aria-labelledby`, `role="img"`, or `aria-hidden={false}` when the SVG itself conveys meaning:
 

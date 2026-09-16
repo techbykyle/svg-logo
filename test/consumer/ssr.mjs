@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
-import LoadLogo, { Grok, Ranteater } from '@techbykyle/svg-logo'
+import LoadLogo, { Grok, GrokKFull, Ranteater } from '@techbykyle/svg-logo'
 
 const semantic = renderToStaticMarkup(
     React.createElement(Grok, {
@@ -21,6 +21,12 @@ assert.match(semantic, /<title>Grok<\/title>/)
 assert.match(semantic, /class="brand-icon"/)
 assert.match(semantic, /data-testid="grok"/)
 assert.doesNotMatch(semantic, /aria-hidden="true"/)
+
+const grokWordmark = renderToStaticMarkup(
+    React.createElement(GrokKFull, { width: 160 })
+)
+assert.match(grokWordmark, /width="160"/)
+assert.match(grokWordmark, /height="62\.5"/)
 
 const muiTitle = renderToStaticMarkup(
     React.createElement(Grok, {

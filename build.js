@@ -158,6 +158,8 @@ function createTypeDeclarations() {
         `    readonly sourceUrl: string | null\n` +
         `    readonly guidelinesUrl: string | null\n` +
         `    readonly assetLicense: IconAssetLicense\n` +
+        `    readonly viewBox: string\n` +
+        `    readonly aspectRatio: number\n` +
         `    readonly colorMode: IconColorMode\n` +
         `    readonly variant: IconVariant\n` +
         `}\n\n` +

@@ -82,6 +82,34 @@ function validateSchemaValue(value, schema, location = '$') {
     }
 }
 
+function readSourceShape(source, location) {
+    const rootSvg = source.match(/<svg\b[^>]*>/is)?.[0]
+    const viewBoxMatch = rootSvg?.match(/\bviewBox\s*=\s*["']([^"']+)["']/i)
+
+    if (!viewBoxMatch) {
+        fail(location, 'must define a root SVG viewBox')
+    }
+
+    const viewBoxValues = viewBoxMatch[1].trim().split(/[\s,]+/).map(Number)
+    if (
+        viewBoxValues.length !== 4 ||
+        viewBoxValues.some((value) => !Number.isFinite(value)) ||
+        viewBoxValues[2] <= 0 ||
+        viewBoxValues[3] <= 0
+    ) {
+        fail(location, `has an invalid root SVG viewBox: ${viewBoxMatch[1]}`)
+    }
+
+    if (/<image\b/i.test(source) || /(?:data:image|base64,)/i.test(source)) {
+        fail(location, 'must not embed raster image data')
+    }
+
+    return {
+        aspectRatio: viewBoxValues[2] / viewBoxValues[3],
+        viewBox: viewBoxMatch[1].trim()
+    }
+}
+
 function loadManifest(rootDir) {
     const manifest = JSON.parse(fs.readFileSync(path.join(rootDir, 'icons.json'), 'utf8'))
     const schema = JSON.parse(fs.readFileSync(path.join(rootDir, 'icons.schema.json'), 'utf8'))
@@ -130,9 +158,19 @@ function loadManifest(rootDir) {
         fail('src/Logo', `unregistered icon source files: ${unregisteredSources.join(', ')}`)
     }
 
+    const icons = manifest.icons.map((icon) => {
+        const sourcePath = path.join(sourceDir, `${icon.fileName}.jsx`)
+        const source = fs.readFileSync(sourcePath, 'utf8')
+
+        return Object.freeze({
+            ...icon,
+            ...readSourceShape(source, path.relative(rootDir, sourcePath))
+        })
+    })
+
     return Object.freeze({
         schemaVersion: manifest.schemaVersion,
-        icons: Object.freeze(manifest.icons.map((icon) => Object.freeze({ ...icon })))
+        icons: Object.freeze(icons)
     })
 }
 
@@ -145,8 +183,10 @@ function toPublicMetadata(icon) {
         sourceUrl,
         guidelinesUrl,
         assetLicense,
+        aspectRatio,
         colorMode,
-        variant
+        variant,
+        viewBox
     } = icon
 
     return {
@@ -157,8 +197,10 @@ function toPublicMetadata(icon) {
         sourceUrl,
         guidelinesUrl,
         assetLicense,
+        aspectRatio,
         colorMode,
-        variant
+        variant,
+        viewBox
     }
 }
 

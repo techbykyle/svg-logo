@@ -36,6 +36,23 @@ function extractTitleFromChildren(children) {
     return extractedTitle
 }
 
+function scaleDimension(value, factor) {
+    if (typeof value === 'number') {
+        return Number.isFinite(value) ? value * factor : undefined
+    }
+
+    if (typeof value !== 'string') {
+        return undefined
+    }
+
+    const match = value.trim().match(/^(-?(?:\d+(?:\.\d*)?|\.\d+))([a-z%]*)$/i)
+    if (!match) {
+        return undefined
+    }
+
+    return `${Number(match[1]) * factor}${match[2]}`
+}
+
 export function createLogoComponent(RawLogo, metadata) {
     const Logo = React.forwardRef(function LogoComponent(props = {}, ref) {
         const {
@@ -59,8 +76,23 @@ export function createLogoComponent(RawLogo, metadata) {
             ...svgProps
         } = props
 
-        const resolvedWidth = width ?? w ?? size ?? 45
-        const resolvedHeight = height ?? h ?? size ?? 45
+        const suppliedWidth = width ?? w
+        const suppliedHeight = height ?? h
+        const hasSize = size != null
+        const hasWidth = suppliedWidth != null
+        const hasHeight = suppliedHeight != null
+        let resolvedWidth = suppliedWidth ?? size ?? 45
+        let resolvedHeight = suppliedHeight ?? size ?? 45
+
+        if (!hasSize && metadata.aspectRatio > 0) {
+            if (hasWidth && !hasHeight) {
+                resolvedHeight = scaleDimension(resolvedWidth, 1 / metadata.aspectRatio) ?? resolvedHeight
+            } else if (!hasWidth && hasHeight) {
+                resolvedWidth = scaleDimension(resolvedHeight, metadata.aspectRatio) ?? resolvedWidth
+            } else if (!hasWidth && !hasHeight && metadata.aspectRatio !== 1) {
+                resolvedHeight = scaleDimension(resolvedWidth, 1 / metadata.aspectRatio) ?? resolvedHeight
+            }
+        }
         const resolvedTitle = title ?? titleAccess ?? extractTitleFromChildren(children)
         const legacyStyle = isLegacyStyle(fill) ? fill : undefined
         const resolvedFill = legacyStyle || fill == null ? 'currentColor' : fill
