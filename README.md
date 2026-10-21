@@ -135,6 +135,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `Anthropic` | `anthropic` | logomark | monochrome | trademark |
 | `Apple` | `apple` | logo | monochrome | trademark |
 | `Aqara` | `aqara` | logo | monochrome | trademark |
+| `Canonical` | `canonical` | logomark | monochrome | trademark |
 | `Cisco` | `cisco` | logo | monochrome | trademark |
 | `ClaudeCode` | `claude-code` | logomark | fixed-color | trademark |
 | `ClaudeCodeMonochrome` | `claude-code-monochrome` | logomark | monochrome | trademark |
@@ -165,6 +166,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `Samsung` | `samsung` | logo | monochrome | trademark |
 | `Shelly` | `shelly` | logo | monochrome | trademark |
 | `Ubiquiti` | `ubiquiti` | logo | monochrome | trademark |
+| `Ubuntu` | `ubuntu` | logomark | monochrome | trademark |
 | `VsCode` | `visual-studio-code` | logo | monochrome | trademark |
 | `Wellcube` | `wellcube` | logo | monochrome | trademark |
 | `XAI` | `xai` | logomark | fixed-color | trademark |
@@ -172,6 +174,8 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `Xiaomi` | `xiaomi` | logo | monochrome | trademark |
 
 `Grok` is the standalone mark. The full supplied mark is exported with the exact requested name `GrokKFull`.
+
+`Ubuntu` and `Canonical` use the same official standalone Ubuntu Circle of Friends geometry on a transparent square canvas, without the extended orange tag or wordmark. Both inherit `currentColor`. `Canonical` is a package-provided identifier for the Ubuntu mark, not Canonical's separate corporate wordmark.
 
 `ClaudeCode` uses Anthropic's official Claude Spark (Clay) press-kit asset as the Claude Code product identifier; it is not a separate Claude Code wordmark.
 

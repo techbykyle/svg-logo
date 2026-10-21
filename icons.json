@@ -62,6 +62,18 @@
       "variant": "logo"
     },
     {
+      "exportName": "Canonical",
+      "fileName": "Canonical",
+      "slug": "canonical",
+      "title": "Canonical",
+      "source": "Canonical UI identifier using the same square monochrome Ubuntu Circle of Friends variant",
+      "sourceUrl": "https://assets.ubuntu.com/v1/82818827-CoF_white.svg",
+      "guidelinesUrl": "https://design.ubuntu.com/brand",
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
       "exportName": "Cisco",
       "fileName": "Cisco",
       "slug": "cisco",
@@ -420,6 +432,18 @@
       "assetLicense": "trademark",
       "colorMode": "monochrome",
       "variant": "logo"
+    },
+    {
+      "exportName": "Ubuntu",
+      "fileName": "Ubuntu",
+      "slug": "ubuntu",
+      "title": "Ubuntu",
+      "source": "Square monochrome UI variant of Canonical’s official standalone Ubuntu Circle of Friends SVG",
+      "sourceUrl": "https://assets.ubuntu.com/v1/82818827-CoF_white.svg",
+      "guidelinesUrl": "https://design.ubuntu.com/brand",
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
     },
     {
       "exportName": "VsCode",

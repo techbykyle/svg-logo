@@ -8,6 +8,15 @@ Records classified as `trademark` should be treated as identification assets bel
 
 Records classified as `project-owned` identify artwork controlled by the package maintainer or the named project. Their inclusion does not transfer ownership or create a separate trademark license.
 
+## Newly added in 0.3.1
+
+| Export | Source basis | Treatment | Classification |
+| --- | --- | --- | --- |
+| `Ubuntu` | Canonical's official standalone [Circle of Friends SVG](https://assets.ubuntu.com/v1/82818827-CoF_white.svg), used on [ubuntu.com](https://ubuntu.com/) | All three circle elements and three vector paths retained exactly. The 60.45×57.87 canvas is centered in a square `0 -1.29 60.45 60.45` view box; fixed white fills are omitted so the mark inherits `currentColor`. Transparent background; no extended orange tag or wordmark. | `trademark` |
+| `Canonical` | Same official Ubuntu Circle of Friends SVG | Identical square geometry and monochrome treatment, exposed under a separate identifier at the maintainer's request. This is a package-provided alias for the Ubuntu mark, not Canonical's separate corporate wordmark. | `trademark` |
+
+These are package-provided UI treatments derived from the official standalone vector asset. Brand resources are available from [Canonical Design](https://design.ubuntu.com/resources).
+
 ## Newly added in 0.2.9
 
 | Export | Source basis | Treatment | Classification |
