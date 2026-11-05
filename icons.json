@@ -62,6 +62,18 @@
       "variant": "logo"
     },
     {
+      "exportName": "ArchLinux",
+      "fileName": "ArchLinux",
+      "slug": "arch-linux",
+      "title": "Arch Linux",
+      "source": "Square monochrome UI variant of the standalone symbol from Arch Linux's official one-color logo",
+      "sourceUrl": "https://archlinux.org/static/logos/archlinux-logo-black-scalable.svg",
+      "guidelinesUrl": "https://archlinux.org/art/",
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
       "exportName": "Canonical",
       "fileName": "Canonical",
       "slug": "canonical",
@@ -105,6 +117,30 @@
       "source": "Monochrome UI variant derived from Anthropic press kit — Claude Spark (Clay)",
       "sourceUrl": "https://www.anthropic.com/news",
       "guidelinesUrl": null,
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
+      "exportName": "Debian",
+      "fileName": "Debian",
+      "slug": "debian",
+      "title": "Debian",
+      "source": "Debian Open Use Logo without text by Raul Silva; copyright (c) 1999 Software in the Public Interest, Inc.; CC BY-SA 3.0; square monochrome UI variant",
+      "sourceUrl": "https://www.debian.org/logos/openlogo-nd.svg",
+      "guidelinesUrl": "https://www.debian.org/logos/",
+      "assetLicense": "open-source",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
+      "exportName": "Fedora",
+      "fileName": "Fedora",
+      "slug": "fedora",
+      "title": "Fedora",
+      "source": "Simple Icons Fedora icon — fedora.svg",
+      "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/develop/icons/fedora.svg",
+      "guidelinesUrl": "https://docs.fedoraproject.org/en-US/project/brand/",
       "assetLicense": "trademark",
       "colorMode": "monochrome",
       "variant": "logomark"
@@ -242,6 +278,30 @@
       "variant": "logo"
     },
     {
+      "exportName": "LinuxMint",
+      "fileName": "LinuxMint",
+      "slug": "linux-mint",
+      "title": "Linux Mint",
+      "source": "Simple Icons Linux Mint icon — linuxmint.svg",
+      "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/develop/icons/linuxmint.svg",
+      "guidelinesUrl": null,
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
+      "exportName": "Manjaro",
+      "fileName": "Manjaro",
+      "slug": "manjaro",
+      "title": "Manjaro",
+      "source": "Simple Icons Manjaro icon — manjaro.svg",
+      "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/develop/icons/manjaro.svg",
+      "guidelinesUrl": null,
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
       "exportName": "Microsoft",
       "fileName": "Microsoft",
       "slug": "microsoft",
@@ -372,6 +432,18 @@
       "assetLicense": "unknown",
       "colorMode": "monochrome",
       "variant": "logo"
+    },
+    {
+      "exportName": "OpenSUSE",
+      "fileName": "OpenSUSE",
+      "slug": "opensuse",
+      "title": "openSUSE",
+      "source": "Simple Icons openSUSE icon — opensuse.svg",
+      "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/develop/icons/opensuse.svg",
+      "guidelinesUrl": null,
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
     },
     {
       "exportName": "Ranteater",

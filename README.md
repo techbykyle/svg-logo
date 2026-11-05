@@ -135,10 +135,13 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `Anthropic` | `anthropic` | logomark | monochrome | trademark |
 | `Apple` | `apple` | logo | monochrome | trademark |
 | `Aqara` | `aqara` | logo | monochrome | trademark |
+| `ArchLinux` | `arch-linux` | logomark | monochrome | trademark |
 | `Canonical` | `canonical` | logomark | monochrome | trademark |
 | `Cisco` | `cisco` | logo | monochrome | trademark |
 | `ClaudeCode` | `claude-code` | logomark | fixed-color | trademark |
 | `ClaudeCodeMonochrome` | `claude-code-monochrome` | logomark | monochrome | trademark |
+| `Debian` | `debian` | logomark | monochrome | open-source |
+| `Fedora` | `fedora` | logomark | monochrome | trademark |
 | `Gitea` | `gitea` | logo | monochrome | trademark |
 | `GitHub` | `github` | logo | monochrome | trademark |
 | `GitHubCopilot` | `github-copilot` | logomark | monochrome | trademark |
@@ -150,6 +153,8 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `HomeAssistant` | `home-assistant` | logo | monochrome | trademark |
 | `HomeDepot` | `home-depot` | logo | duotone | trademark |
 | `LinkedIn` | `linkedin` | logo | monochrome | trademark |
+| `LinuxMint` | `linux-mint` | logomark | monochrome | trademark |
+| `Manjaro` | `manjaro` | logomark | monochrome | trademark |
 | `Microsoft` | `microsoft` | logo | monochrome | trademark |
 | `Mqtt` | `mqtt` | logo | monochrome | trademark |
 | `MSI` | `msi` | logo | monochrome | trademark |
@@ -161,6 +166,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `OpenCode` | `opencode` | logomark | fixed-color | trademark |
 | `OpenCodeMonochrome` | `opencode-monochrome` | logomark | monochrome | trademark |
 | `Opensource` | `open-source` | logo | monochrome | unknown |
+| `OpenSUSE` | `opensuse` | logomark | monochrome | trademark |
 | `Ranteater` | `ranteater` | emblem | fixed-color | project-owned |
 | `Reolink` | `reolink` | logo | monochrome | trademark |
 | `Samsung` | `samsung` | logo | monochrome | trademark |
@@ -172,6 +178,14 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `XAI` | `xai` | logomark | fixed-color | trademark |
 | `XAISquareTransparent` | `xai-square-transparent` | logomark | fixed-color | trademark |
 | `Xiaomi` | `xiaomi` | logo | monochrome | trademark |
+
+The Linux distribution icons are `ArchLinux`, `Debian`, `Fedora`, `LinuxMint`, `Manjaro`, `OpenSUSE`, and `Ubuntu`. All use transparent square canvases and inherit `currentColor`:
+
+```jsx
+import { ArchLinux, Debian, Fedora, LinuxMint, Manjaro, OpenSUSE } from '@techbykyle/svg-logo'
+
+<ArchLinux size={24} title="Arch Linux" />
+```
 
 `Grok` is the standalone mark. The full supplied mark is exported with the exact requested name `GrokKFull`.
 

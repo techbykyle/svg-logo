@@ -8,6 +8,21 @@ Records classified as `trademark` should be treated as identification assets bel
 
 Records classified as `project-owned` identify artwork controlled by the package maintainer or the named project. Their inclusion does not transfer ownership or create a separate trademark license.
 
+## Newly added in 0.3.2
+
+| Export | Source basis | Treatment | Classification |
+| --- | --- | --- | --- |
+| `ArchLinux` | Arch Linux's official [one-color SVG](https://archlinux.org/static/logos/archlinux-logo-black-scalable.svg), linked from its [artwork page](https://archlinux.org/art/) | Standalone symbol path retained exactly, without the wordmark or TM lettering. Its inherited transforms and fixed black fill are omitted; a square `22.734375 16.625 166.1875 166.1875` view box centers the original symbol geometry and allows `currentColor`. | `trademark` |
+| `Debian` | Official [Debian Open Use Logo without text](https://www.debian.org/logos/openlogo-nd.svg), by Raul Silva | All 12 original vector paths retained; fixed red fills and editor metadata omitted. The 87.041×108.445 artwork is centered in a square `-10.702 0 108.445 108.445` view box and inherits `currentColor`. | `open-source` |
+| `Fedora` | [Simple Icons `fedora.svg`](https://github.com/simple-icons/simple-icons/blob/develop/icons/fedora.svg) | Original 24×24 standalone mark and single path retained, inheriting `currentColor`. | `trademark` |
+| `LinuxMint` | [Simple Icons `linuxmint.svg`](https://github.com/simple-icons/simple-icons/blob/develop/icons/linuxmint.svg) | Original 24×24 circular LM mark and single path retained, inheriting `currentColor`. | `trademark` |
+| `Manjaro` | [Simple Icons `manjaro.svg`](https://github.com/simple-icons/simple-icons/blob/develop/icons/manjaro.svg) | Original 24×24 rounded mark and single path retained, inheriting `currentColor`. | `trademark` |
+| `OpenSUSE` | [Simple Icons `opensuse.svg`](https://github.com/simple-icons/simple-icons/blob/develop/icons/opensuse.svg) | Original 24×24 circular Geeko-head mark and single path retained, inheriting `currentColor`. | `trademark` |
+
+These are transparent, monochrome UI treatments. They identify the distributions without adding wordmarks or background tiles. Fedora's [brand resources](https://docs.fedoraproject.org/en-US/project/brand/) describe its logo usage.
+
+The Debian artwork is copyright © 1999 Software in the Public Interest, Inc., created by Raul Silva, and distributed here under [Creative Commons Attribution-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/), as permitted by [Debian's logo license](https://www.debian.org/logos/). The monochrome square adaptation remains under that license; the changes are listed above. This asset license is separate from the package code's MIT License, and Debian's trademarks remain subject to its policies.
+
 ## Newly added in 0.3.1
 
 | Export | Source basis | Treatment | Classification |
