@@ -8,6 +8,14 @@ Records classified as `trademark` should be treated as identification assets bel
 
 Records classified as `project-owned` identify artwork controlled by the package maintainer or the named project. Their inclusion does not transfer ownership or create a separate trademark license.
 
+## Newly added in 0.3.3
+
+| Export | Source basis | Treatment | Classification |
+| --- | --- | --- | --- |
+| `Linux` | [Simple Icons `linux.svg`](https://github.com/simple-icons/simple-icons/blob/521c96fd04b0ea93034db8715eda5a4de27a58bb/icons/linux.svg), depicting Tux by Larry Ewing | Original 24×24 view box and single path retained exactly; transparent background and inherited `currentColor`. | `trademark` |
+
+Simple Icons distributes its contribution under [CC0 1.0 Universal](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md). The original Tux artwork was created by Larry Ewing using The GIMP. The [kernel.org FAQ](https://www.kernel.org/faq.html#can-i-use-the-word-linux-or-the-tux-logo) permits use, including commercial use, with proper credit to Larry Ewing if asked. Retain credit to Larry Ewing and The GIMP when providing attribution. The Linux name remains a trademark of Linus Torvalds; the package code's MIT License does not replace these asset terms.
+
 ## Newly added in 0.3.2
 
 | Export | Source basis | Treatment | Classification |

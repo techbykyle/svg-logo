@@ -153,6 +153,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `HomeAssistant` | `home-assistant` | logo | monochrome | trademark |
 | `HomeDepot` | `home-depot` | logo | duotone | trademark |
 | `LinkedIn` | `linkedin` | logo | monochrome | trademark |
+| `Linux` | `linux` | logomark | monochrome | trademark |
 | `LinuxMint` | `linux-mint` | logomark | monochrome | trademark |
 | `Manjaro` | `manjaro` | logomark | monochrome | trademark |
 | `Microsoft` | `microsoft` | logo | monochrome | trademark |
@@ -178,6 +179,14 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `XAI` | `xai` | logomark | fixed-color | trademark |
 | `XAISquareTransparent` | `xai-square-transparent` | logomark | fixed-color | trademark |
 | `Xiaomi` | `xiaomi` | logo | monochrome | trademark |
+
+`Linux` depicts Tux, the Linux penguin, using the Simple Icons monochrome SVG on a transparent 24×24 canvas. It inherits `currentColor` and supports named imports, the `@techbykyle/svg-logo/icons/Linux` subpath, and `LoadLogo` with `iconPath="Linux"` or `iconPath="linux"`:
+
+```jsx
+import Linux from '@techbykyle/svg-logo/icons/Linux'
+
+<Linux size={24} title="Linux" />
+```
 
 The Linux distribution icons are `ArchLinux`, `Debian`, `Fedora`, `LinuxMint`, `Manjaro`, `OpenSUSE`, and `Ubuntu`. All use transparent square canvases and inherit `currentColor`:
 

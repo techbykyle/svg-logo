@@ -278,6 +278,18 @@
       "variant": "logo"
     },
     {
+      "exportName": "Linux",
+      "fileName": "Linux",
+      "slug": "linux",
+      "title": "Linux",
+      "source": "Simple Icons Linux icon (CC0-1.0), depicting Tux by Larry Ewing, created with The GIMP; original 24x24 path retained",
+      "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/521c96fd04b0ea93034db8715eda5a4de27a58bb/icons/linux.svg",
+      "guidelinesUrl": "https://www.kernel.org/faq.html#can-i-use-the-word-linux-or-the-tux-logo",
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
       "exportName": "LinuxMint",
       "fileName": "LinuxMint",
       "slug": "linux-mint",
