@@ -146,6 +146,18 @@
       "variant": "logomark"
     },
     {
+      "exportName": "Git",
+      "fileName": "Git",
+      "slug": "git",
+      "title": "Git",
+      "source": "Git logomark by Jason Long (CC BY 3.0), adapted to inherit currentColor",
+      "sourceUrl": "https://git-scm.com/images/logos/downloads/Git-Icon-Black.svg",
+      "guidelinesUrl": "https://git-scm.com/about/trademark",
+      "assetLicense": "open-source",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
       "exportName": "Gitea",
       "fileName": "Gitea",
       "slug": "gitea",
@@ -324,6 +336,18 @@
       "assetLicense": "trademark",
       "colorMode": "monochrome",
       "variant": "logo"
+    },
+    {
+      "exportName": "MicrosoftColor",
+      "fileName": "MicrosoftColor",
+      "slug": "microsoft-color",
+      "title": "Microsoft",
+      "source": "Microsoft identity platform standalone four-color symbol",
+      "sourceUrl": "https://raw.githubusercontent.com/MicrosoftDocs/entra-docs/main/docs/identity-platform/media/howto-add-branding-in-apps/ms-symbollockup_mssymbol_19.svg",
+      "guidelinesUrl": "https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-branding-in-apps",
+      "assetLicense": "trademark",
+      "colorMode": "fixed-color",
+      "variant": "logomark"
     },
     {
       "exportName": "Mqtt",
@@ -552,6 +576,18 @@
       "assetLicense": "trademark",
       "colorMode": "monochrome",
       "variant": "logo"
+    },
+    {
+      "exportName": "Windows11",
+      "fileName": "Windows11",
+      "slug": "windows-11",
+      "title": "Windows 11",
+      "source": "Simple Icons Windows 11 symbol in Windows blue",
+      "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/9.21.0/icons/windows11.svg",
+      "guidelinesUrl": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+      "assetLicense": "trademark",
+      "colorMode": "fixed-color",
+      "variant": "logomark"
     },
     {
       "exportName": "XAI",

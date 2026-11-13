@@ -8,6 +8,16 @@ Records classified as `trademark` should be treated as identification assets bel
 
 Records classified as `project-owned` identify artwork controlled by the package maintainer or the named project. Their inclusion does not transfer ownership or create a separate trademark license.
 
+## Git
+
+The `Git` component uses Jason Long’s standalone Git logomark under CC BY 3.0. It preserves the original view box, path, and transform, and inherits `currentColor` in place of the fixed fill. [Git logo downloads](https://git-scm.com/community/logos) · [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) · [Git trademark policy](https://git-scm.com/about/trademark)
+
+## Microsoft and Windows 11
+
+`MicrosoftColor` uses the four colored squares from Microsoft's 21×21 symbol. [Microsoft identity platform artwork](https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-branding-in-apps)
+
+`Windows11` uses the four-pane Windows 11 path from Simple Icons 9.21.0 with a fixed blue fill (`#0078D4`). [Windows 11 source SVG](https://github.com/simple-icons/simple-icons/blob/9.21.0/icons/windows11.svg)
+
 ## Newly added in 0.3.3
 
 | Export | Source basis | Treatment | Classification |

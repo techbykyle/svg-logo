@@ -142,6 +142,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `ClaudeCodeMonochrome` | `claude-code-monochrome` | logomark | monochrome | trademark |
 | `Debian` | `debian` | logomark | monochrome | open-source |
 | `Fedora` | `fedora` | logomark | monochrome | trademark |
+| `Git` | `git` | logomark | monochrome | open-source |
 | `Gitea` | `gitea` | logo | monochrome | trademark |
 | `GitHub` | `github` | logo | monochrome | trademark |
 | `GitHubCopilot` | `github-copilot` | logomark | monochrome | trademark |
@@ -157,6 +158,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `LinuxMint` | `linux-mint` | logomark | monochrome | trademark |
 | `Manjaro` | `manjaro` | logomark | monochrome | trademark |
 | `Microsoft` | `microsoft` | logo | monochrome | trademark |
+| `MicrosoftColor` | `microsoft-color` | logomark | fixed-color | trademark |
 | `Mqtt` | `mqtt` | logo | monochrome | trademark |
 | `MSI` | `msi` | logo | monochrome | trademark |
 | `Netgate` | `netgate` | logo | duotone | trademark |
@@ -176,6 +178,7 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `Ubuntu` | `ubuntu` | logomark | monochrome | trademark |
 | `VsCode` | `visual-studio-code` | logo | monochrome | trademark |
 | `Wellcube` | `wellcube` | logo | monochrome | trademark |
+| `Windows11` | `windows-11` | logomark | fixed-color | trademark |
 | `XAI` | `xai` | logomark | fixed-color | trademark |
 | `XAISquareTransparent` | `xai-square-transparent` | logomark | fixed-color | trademark |
 | `Xiaomi` | `xiaomi` | logo | monochrome | trademark |
