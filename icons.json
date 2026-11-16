@@ -74,6 +74,18 @@
       "variant": "logomark"
     },
     {
+      "exportName": "Bitbucket",
+      "fileName": "Bitbucket",
+      "slug": "bitbucket",
+      "title": "Bitbucket",
+      "source": "Simple Icons Bitbucket icon — bitbucket.svg; original 24×24 view box and path retained, inheriting currentColor",
+      "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/521c96fd04b0ea93034db8715eda5a4de27a58bb/icons/bitbucket.svg",
+      "guidelinesUrl": "https://www.atlassian.com/legal/trademark",
+      "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
       "exportName": "Canonical",
       "fileName": "Canonical",
       "slug": "canonical",
@@ -142,6 +154,18 @@
       "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/develop/icons/fedora.svg",
       "guidelinesUrl": "https://docs.fedoraproject.org/en-US/project/brand/",
       "assetLicense": "trademark",
+      "colorMode": "monochrome",
+      "variant": "logomark"
+    },
+    {
+      "exportName": "Forgejo",
+      "fileName": "Forgejo",
+      "slug": "forgejo",
+      "title": "Forgejo",
+      "source": "Official Forgejo monochrome logo by Caesar Schinas (CC BY-SA 4.0); SVG styles scoped to the component",
+      "sourceUrl": "https://codeberg.org/forgejo/governance/raw/branch/main/branding/logo/forgejo-monochrome.svg",
+      "guidelinesUrl": "https://codeberg.org/forgejo/governance/src/branch/main/branding#logo",
+      "assetLicense": "open-source",
       "colorMode": "monochrome",
       "variant": "logomark"
     },

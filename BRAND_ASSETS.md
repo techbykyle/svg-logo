@@ -8,6 +8,14 @@ Records classified as `trademark` should be treated as identification assets bel
 
 Records classified as `project-owned` identify artwork controlled by the package maintainer or the named project. Their inclusion does not transfer ownership or create a separate trademark license.
 
+## Bitbucket
+
+The `Bitbucket` component uses [Simple Icons `bitbucket.svg`](https://github.com/simple-icons/simple-icons/blob/521c96fd04b0ea93034db8715eda5a4de27a58bb/icons/bitbucket.svg), retaining its original 24×24 view box and single vector path on a transparent canvas and inheriting `currentColor`. Simple Icons distributes its contribution under [CC0 1.0 Universal](https://github.com/simple-icons/simple-icons/blob/521c96fd04b0ea93034db8715eda5a4de27a58bb/LICENSE.md). The Bitbucket name and logo remain Atlassian trademarks, subject to [Atlassian's trademark guidelines](https://www.atlassian.com/legal/trademark); the package code's MIT License does not grant rights to those marks.
+
+## Forgejo
+
+The `Forgejo` component uses the [official monochrome SVG](https://codeberg.org/forgejo/governance/raw/branch/main/branding/logo/forgejo-monochrome.svg) by [Caesar Schinas](https://caesarschinas.com/), distributed under [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) as stated in the [Forgejo branding documentation](https://codeberg.org/forgejo/governance/src/branch/main/branding#logo). The original 212×212 view box, two paths, three circles, transform, stroke widths, and inherited `currentColor` are retained. The SVG's global stylesheet is replaced with scoped presentation attributes, and its RDF attribution is recorded here and in the package metadata. This adaptation remains under CC BY-SA 4.0, separately from the package code's MIT License.
+
 ## Git
 
 The `Git` component uses Jason Long’s standalone Git logomark under CC BY 3.0. It preserves the original view box, path, and transform, and inherits `currentColor` in place of the fixed fill. [Git logo downloads](https://git-scm.com/community/logos) · [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) · [Git trademark policy](https://git-scm.com/about/trademark)

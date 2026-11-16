@@ -136,12 +136,14 @@ Raw metadata is available at `@techbykyle/svg-logo/metadata.json`. Every icon co
 | `Apple` | `apple` | logo | monochrome | trademark |
 | `Aqara` | `aqara` | logo | monochrome | trademark |
 | `ArchLinux` | `arch-linux` | logomark | monochrome | trademark |
+| `Bitbucket` | `bitbucket` | logomark | monochrome | trademark |
 | `Canonical` | `canonical` | logomark | monochrome | trademark |
 | `Cisco` | `cisco` | logo | monochrome | trademark |
 | `ClaudeCode` | `claude-code` | logomark | fixed-color | trademark |
 | `ClaudeCodeMonochrome` | `claude-code-monochrome` | logomark | monochrome | trademark |
 | `Debian` | `debian` | logomark | monochrome | open-source |
 | `Fedora` | `fedora` | logomark | monochrome | trademark |
+| `Forgejo` | `forgejo` | logomark | monochrome | open-source |
 | `Git` | `git` | logomark | monochrome | open-source |
 | `Gitea` | `gitea` | logo | monochrome | trademark |
 | `GitHub` | `github` | logo | monochrome | trademark |
@@ -197,6 +199,22 @@ The Linux distribution icons are `ArchLinux`, `Debian`, `Fedora`, `LinuxMint`, `
 import { ArchLinux, Debian, Fedora, LinuxMint, Manjaro, OpenSUSE } from '@techbykyle/svg-logo'
 
 <ArchLinux size={24} title="Arch Linux" />
+```
+
+`Bitbucket` uses the Simple Icons monochrome mark on a transparent 24×24 canvas and inherits `currentColor`. It supports named imports, the `@techbykyle/svg-logo/icons/Bitbucket` subpath, and `LoadLogo` with `iconPath="Bitbucket"` or `iconPath="bitbucket"`:
+
+```jsx
+import Bitbucket from '@techbykyle/svg-logo/icons/Bitbucket'
+
+<Bitbucket size={24} title="Bitbucket" />
+```
+
+`Forgejo` uses the official monochrome logo on its original transparent 212×212 canvas and inherits `currentColor`. It supports named imports, the `@techbykyle/svg-logo/icons/Forgejo` subpath, and `LoadLogo` with `iconPath="Forgejo"` or `iconPath="forgejo"`:
+
+```jsx
+import Forgejo from '@techbykyle/svg-logo/icons/Forgejo'
+
+<Forgejo size={24} title="Forgejo" />
 ```
 
 `Grok` is the standalone mark. The full supplied mark is exported with the exact requested name `GrokKFull`.
